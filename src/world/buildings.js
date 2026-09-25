@@ -57,6 +57,7 @@ export function styleOf(b, override = {}) {
     // metres above the building's ground, when a better measurement exists (LiDAR, photo)
     eaveAbove: override.eaveAbove ?? null,
     ridgeAbove: override.ridgeAbove ?? null,
+    doors: override.doors ?? [],
   };
 }
 

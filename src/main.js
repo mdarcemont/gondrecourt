@@ -65,7 +65,7 @@ function setViewport(w, h) {
 }
 window.addEventListener('resize', () => setViewport(window.innerWidth, window.innerHeight));
 setViewport(window.innerWidth, window.innerHeight);
-createTravel({ player, flash: hud.flash });
+createTravel({ player, world, flash: hud.flash });
 
 hud.onStart = () => {
   ambience.start();
