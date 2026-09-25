@@ -9,5 +9,11 @@ import * as tour from './tour.js';
 import * as mairie from './mairie/index.js';
 import * as monument from './monument.js';
 import * as eglise from './eglise.js';
+import * as tribunal from './tribunal.js';
+import * as carpiere from './carpiere/index.js';
+import * as carrefour from './carrefour.js';
+import * as carrefourFacade from './carrefour-facade.js';
+import * as creditAgricole from './credit-agricole.js';
+import * as mieMado from './mie-mado.js';
 
-export const LANDMARKS = { 'le-central': leCentral, pharmacie, tour, mairie, monument, eglise };
+export const LANDMARKS = { 'le-central': leCentral, pharmacie, tour, mairie, monument, eglise, tribunal, carpiere, carrefour, 'carrefour-facade': carrefourFacade, 'credit-agricole': creditAgricole, 'mie-mado': mieMado };

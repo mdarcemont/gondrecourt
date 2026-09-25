@@ -44,17 +44,6 @@
     },
     {
       "type": "shopfront",
-      "building": "BATIMENT0000002245471100",
-      "name": "BOULANGERIE",
-      "sub": "Pâtisserie · Viennoiserie",
-      "colour": 9067066,
-      "awning": 9067066,
-      "board": "Pain chaud",
-      "confidence": "requested",
-      "source": "Manuel asked for a boulangerie on the Place; position chosen: BD TOPO 'commerce' building facing the pharmacy. Tell me the real one."
-    },
-    {
-      "type": "shopfront",
       "name": "LA POSTE",
       "colour": 16106496,
       "text": 2710668,
@@ -196,6 +185,38 @@
       "seed": 13,
       "confidence": "type-seen",
       "source": "cars along the Rue du Pont: sv-rue-du-pont-north"
+    },
+    {
+      "type": "parkedCars",
+      "parking": 1073116756,
+      "share": 0.7,
+      "seed": 21,
+      "confidence": "type-seen",
+      "source": "cars in the car park beside La Carpière: user capture"
+    },
+    {
+      "type": "parkedCars",
+      "parking": 801857157,
+      "share": 0.6,
+      "seed": 23,
+      "confidence": "type-seen",
+      "source": "car park on the Rue du Général Leclerc (OSM); cars not checked"
+    },
+    {
+      "type": "parkedCars",
+      "parking": 964061859,
+      "share": 0.65,
+      "seed": 31,
+      "confidence": "type-seen",
+      "source": "Carrefour car park: user captures"
+    },
+    {
+      "type": "parkedCars",
+      "parking": 371468527,
+      "share": 0.7,
+      "seed": 37,
+      "confidence": "type-seen",
+      "source": "car park by the river, seen from Le Central's bridge: user captures"
     }
   ]
 }

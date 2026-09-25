@@ -196,3 +196,30 @@ export function tricolour() {
     });
   }, { repeat: false });
 }
+
+/**
+ * Rough limestone masonry (the château tower, the park wall): irregular
+ * courses of grey-beige blocks with dark joints.  1 unit = 2 m square.
+ */
+export function rubbleStone(tone = 'grey') {
+  const palette = tone === 'grey'
+    ? ['#c9c3b6', '#bdb6a8', '#d3cdbf', '#b2ab9d', '#c4bba9']
+    : ['#d6c9a8', '#cbbd99', '#ddd1b3', '#c2b38f', '#d0c3a2'];
+  return canvasTexture(`rubble-${tone}`, 256, 256, (c, w, h) => {
+    c.fillStyle = '#8a8478';
+    c.fillRect(0, 0, w, h);
+    let s = tone === 'grey' ? 31 : 57;
+    const rand = () => ((s = (s * 16807) % 2147483647) / 2147483647);
+    for (let y = 0; y < h;) {
+      const course = 14 + rand() * 18;
+      for (let x = -rand() * 30; x < w;) {
+        const len = 22 + rand() * 40;
+        c.fillStyle = palette[Math.floor(rand() * palette.length)];
+        c.fillRect(x + 1.5, y + 1.5, len - 3, course - 3);
+        if (x + len > w) c.fillRect(x - w + 1.5, y + 1.5, len - 3, course - 3);
+        x += len;
+      }
+      y += course;
+    }
+  });
+}

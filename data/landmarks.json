@@ -45,13 +45,15 @@
       "name": "Tour de Gondrecourt (Musée Lorrain du Cheval)",
       "osm": "way/370837984",
       "facts": [
-        "round 15th-century tower, joined to the 18th-century former tribunal",
-        "on the plateau of the upper town, about 18 m above the square",
-        "BD TOPO: its own 21-sided footprint, radius 4.3-5.0 m, wall top 28.7 m, top 30.7 m above the square; the OSM museum polygon is the tribunal beside it"
+        "round 15th-century tower in rough grey limestone, unrendered",
+        "steep conical roof of brown tiles with an overhang, a flag on top",
+        "LiDAR HD: wall top about 16.5 m, roof tip 22.6 m above the ground at the tower (BD TOPO's 2 m roof rise is wrong for a cone)",
+        "BD TOPO: its own 21-sided footprint, radius 4.3-5.0 m",
+        "street side: small kiosk with a tiled pyramid roof, an old lantern, low wall with pillars, information panel, bench, woodpile"
       ],
       "sources": [
-        "fr.wikipedia.org/wiki/Gondrecourt-le-Château",
-        "IGN RGE ALTI: 313.8 m at the tower vs 295.5 m at the square"
+        "user photos 2026-09-25: from the lower town, from the street beside it, Street View Apr 2026",
+        "IGN LiDAR HD MNH"
       ],
       "verified": false,
       "bdtopo": "BATIMENT0000002245471392",
@@ -105,6 +107,94 @@
       ],
       "verified": false,
       "standalone": true
+    },
+    {
+      "id": "tribunal",
+      "name": "Ancien tribunal (Musée Lorrain du Cheval)",
+      "osm": "way/370837984",
+      "facts": [
+        "pale grey-cream render, three rows of plain windows, hipped brown tile roof",
+        "lower wing on its west side with an orange tile roof"
+      ],
+      "sources": [
+        "user photos 2026-09-25"
+      ],
+      "verified": false
+    },
+    {
+      "id": "carpiere",
+      "name": "La Carpière (salle socio-culturelle) and its park",
+      "osm": "way/801858319",
+      "facts": [
+        "single-storey hall, white render, flat roof with a dark top band, orange frame round a glazed entrance, paved forecourt with benches",
+        "park between the hall and the Rue du Général Leclerc: lawn, rows of stone slabs set in the grass, playground with wooden play structures, information panel, weeping willow",
+        "along the street: low limestone wall with lavender and tall grasses in a strip at its foot, tall blue lamp posts",
+        "car park beside the hall; the old railway viaduct crosses the street to the west"
+      ],
+      "sources": [
+        "user Street View captures 2026-09-25 (7 views from the Rue du Général Leclerc)",
+        "user point 48.513851, 5.503529"
+      ],
+      "verified": false
+    },
+    {
+      "id": "carrefour",
+      "name": "Carrefour Contact",
+      "osm": "node/6621310889",
+      "bdtopo": "BATIMENT0000002245471187",
+      "facts": [
+        "store front on the car park: green panel with a fruit-and-hands mural, 'Carrefour contact' lettering with the logo, arched glazed entrance, red 'au contact des bonnes affaires' banner",
+        "car park with painted bays in front; blue lamp posts"
+      ],
+      "sources": [
+        "user Street View captures 2026-09-25 (Apr 2026)"
+      ],
+      "verified": false
+    },
+    {
+      "id": "carrefour-facade",
+      "name": "Building above Carrefour Contact",
+      "osm": "node/6621310889",
+      "bdtopo": "BATIMENT0000002245471184",
+      "facts": [
+        "tall cream building with a rounded pediment and an oculus, three storeys",
+        "river side: 'Carrefour contact' lettering and a mural; which BD TOPO building carries the pediment is read from the photos, not certain"
+      ],
+      "sources": [
+        "user Street View captures 2026-09-25 (Apr 2026)"
+      ],
+      "verified": false
+    },
+    {
+      "id": "credit-agricole",
+      "name": "Crédit Agricole Lorraine",
+      "osm": "node/0",
+      "bdtopo": "BATIMENT0000002245471128",
+      "facts": [
+        "two storeys, pale roughcast, hipped tile roof",
+        "wide dark windows with pale striped film and 'CRÉDIT AGRICOLE / LORRAINE'",
+        "small tiled canopy over the entrance with the white name sign, green CA logo",
+        "hedge and a stone trough on the corner, blue lamp posts"
+      ],
+      "sources": [
+        "user Street View captures 2026-09-25 (Apr 2026)",
+        "user point 48.513983, 5.507444"
+      ],
+      "verified": false
+    },
+    {
+      "id": "mie-mado",
+      "name": "Boulangerie La Mie Mado",
+      "osm": "node/0",
+      "bdtopo": "BATIMENT0000002245471060",
+      "facts": [
+        "at the north end of Le Central's bridge, at the river end of a grey-white house",
+        "yellow fascia 'Boulangerie · Pâtisserie' (Festival), blue mosaic band, green board 'LA MIE MADO 03-29-92-01-33', white shopfront, round hanging sign; garage doors along the rest"
+      ],
+      "sources": [
+        "user Street View captures 2026-09-25 (Apr 2026)"
+      ],
+      "verified": false
     }
   ]
 }

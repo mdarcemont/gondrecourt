@@ -7,6 +7,7 @@ import { PAL } from '../engine/palette.js';
 import { cel } from '../engine/toon.js';
 import { createMeshBuffer } from './meshbuffer.js';
 import { railing } from './textures.js';
+import { buildViaduct, isViaduct } from './viaduct.js';
 
 const STEP = 2; // resample spacing, metres
 const LIFT = 0.12;
@@ -87,6 +88,7 @@ export function buildRoads(roads, heightAt) {
     ribbon(asphalt, samples, r.width, LIFT + 0.04, heightAt, PAL.road);
     if (r.bridge) bridgeSides(sides, rails, samples, r.width);
   });
+  const viaducts = roads.filter((r) => isViaduct(r, heightAt)).map((r) => buildViaduct(r, heightAt));
 
   const group = new THREE.Group();
   const add = (buf, mat, order) => {
@@ -101,5 +103,6 @@ export function buildRoads(roads, heightAt) {
   add(asphalt, Object.assign(cel({ color: 0xffffff, vertexColors: true, cache: false, side: THREE.DoubleSide }), decal(2)), 2);
   add(sides, cel({ color: 0xffffff, vertexColors: true, side: THREE.DoubleSide }), 0);
   add(rails, cel({ color: 0xffffff, map: railing(), alphaTest: 0.5, side: THREE.DoubleSide }), 0);
+  viaducts.forEach((v) => group.add(v));
   return group;
 }

@@ -87,6 +87,10 @@ Some things are rules, not data, and so can be wrong for one building:
 | Église | From a Street View capture + LiDAR: bell tower at its measured position and height (spire 24.2 m), belfry openings, clock, slate spire, west front with portal, rose window, buttresses, lancet windows. The side aisles are not modelled separately. |
 | Place de l'Hôtel de Ville | Shops (boulangerie *position chosen*, La Poste and Léna'turelle from OSM, boucherie and coiffure *invented*), parked cars, benches, planters, lamp posts. |
 | Pharmacie de l'Ornain | Lettering, crosses, balconies. |
-| Tour (château) | True cylinder from its footprint and heights. **Not checked against a photo.** |
+| Tour (château) | From 3 user photos + LiDAR (wall 16.5 m, roof tip 22.6 m): rough grey stone, flared brown-tile cone, flag; the tribunal beside it; kiosk, lantern, low wall, bench and woodpile on the street side. |
+| La Carpière | From 7 captures: white hall, dark top band, orange-framed entrance, forecourt; park with stone wall, lavender strip, blue lamps, slabs, playground; the stone railway viaduct. |
+| Carrefour Contact | Store front on its car park (green panel, mural, lettering, arched entrance, banner), the pediment building above it, cars in both car parks. Which building carries the pediment is read from photos. |
+| Crédit Agricole | Two storeys, hipped roof, striped windows, canopy and sign, hedge. |
+| La Mie Mado | The real boulangerie, at the north end of Le Central's bridge (replaces the invented one on the Place). |
 | Everywhere | 2067 LiDAR trees, 594 roof colours from the orthophoto, geraniums on ~30 % of street windows (*invented*), water lilies on the Ornain (*remembered*), ducks, flowing water, river, bird and bell sounds. |
 | Cars | Renault Twingo I, Clio II, Kangoo I; Peugeot 205, 206, 406; Citroën Saxo, Xsara Picasso: real dimensions, period colours, plastic bumpers, rubbing strips, hubcaps, old-format plates ending in 55. |
