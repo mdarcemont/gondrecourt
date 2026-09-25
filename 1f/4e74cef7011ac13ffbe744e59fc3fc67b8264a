@@ -1,0 +1,62 @@
+src/world/textures.js
+  s_ef46b9b5dd6af5::t_5d2fc765fbfd02 199-225
+data/world.json
+  s_ef46b9b5dd6af5::t_a92900a9e26535 1
+src/world/landmarks/tour.js
+  s_ef46b9b5dd6af5::t_5d2fc765fbfd02 3-8,11,13-14,18-31,35-38,41-62
+  s_ef46b9b5dd6af5::t_d4574eae9d79ff 32,64
+src/world/landmarks/shop-textures.js
+  s_ef46b9b5dd6af5::t_d59242efb6dfba 1-58
+data/details.json
+  s_ef46b9b5dd6af5::t_d59242efb6dfba 204-219
+  s_ef46b9b5dd6af5::t_b8da0a674eee93 188-203
+src/world/landmarks/index.js
+  s_ef46b9b5dd6af5::t_d59242efb6dfba 14-17,19
+  s_ef46b9b5dd6af5::t_b8da0a674eee93 12-13
+data/landmarks.json
+  s_ef46b9b5dd6af5::t_5d2fc765fbfd02 48-52,55-56,110-138
+  s_ef46b9b5dd6af5::t_d59242efb6dfba 139-197
+src/world/landmarks/carpiere/park.js
+  s_ef46b9b5dd6af5::t_b8da0a674eee93 1-14,16-165
+  s_ef46b9b5dd6af5::t_5cf6361972b222 15
+src/world/viaduct.js
+  s_ef46b9b5dd6af5::t_4c423ebcdfb9db 1-69
+src/world/landmarks/carpiere/index.js
+  s_ef46b9b5dd6af5::t_b8da0a674eee93 1-71
+src/world/roads.js
+  s_ef46b9b5dd6af5::t_4c423ebcdfb9db 10,91,106
+src/world/landmarks/carrefour.js
+  s_ef46b9b5dd6af5::t_d59242efb6dfba 1-53
+src/world/landmarks/tribunal.js
+  s_ef46b9b5dd6af5::t_d4574eae9d79ff 10-11
+  s_ef46b9b5dd6af5::t_5d2fc765fbfd02 1-9,12-15
+src/world/landmarks/tour-surroundings.js
+  s_ef46b9b5dd6af5::t_d4574eae9d79ff 84-95,97-101,104-105
+  s_ef46b9b5dd6af5::t_b8da0a674eee93 102-103
+  s_ef46b9b5dd6af5::t_5d2fc765fbfd02 1-83,96,106-107
+src/world/landmarks/carrefour-facade.js
+  s_ef46b9b5dd6af5::t_d59242efb6dfba 1-52
+src/world/landmarks/credit-agricole.js
+  s_ef46b9b5dd6af5::t_d59242efb6dfba 1-61
+src/world/landmarks/mie-mado.js
+  s_ef46b9b5dd6af5::t_d59242efb6dfba 1-13,16-31,37-47
+  s_ef46b9b5dd6af5::t_5e56444f479763 14-15,32-36
+README.md
+  s_ef46b9b5dd6af5::t_888199d2b22a2e 90-94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1f4e74cef7011ac13ffbe744e59fc3fc67b8264a",
+  "prompts": {},
+  "sessions": {
+    "s_ef46b9b5dd6af5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f85315ef-fe48-4dc6-909b-e4b37c593d55",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Manuel Darcemont <manuel@usetandem.ai>"
+    }
+  }
+}
