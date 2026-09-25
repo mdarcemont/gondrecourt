@@ -1,0 +1,39 @@
+src/world/landmarks/lavoir.js
+  s_ef46b9b5dd6af5::t_42cb3aa22c0a0c 1-5
+src/world/landmarks/shelter.js
+  s_ef46b9b5dd6af5::t_42cb3aa22c0a0c 1-98
+src/world/buildings.js
+  s_ef46b9b5dd6af5::t_6b08ad51a62a5c 73,79-100
+data/world.json
+  s_ef46b9b5dd6af5::t_42cb3aa22c0a0c 1
+src/audio/ambience.js
+  s_ef46b9b5dd6af5::t_6b08ad51a62a5c 19-20
+src/world/landmarks/carrefour/index.js
+  s_ef46b9b5dd6af5::t_136f9129ca015a 105-112
+  s_ef46b9b5dd6af5::t_6b08ad51a62a5c 66,77,81-87
+  s_ef46b9b5dd6af5::t_584eaf1cd80d25 88-89
+data/landmarks.json
+  s_ef46b9b5dd6af5::t_42cb3aa22c0a0c 243-272
+src/world/landmarks/index.js
+  s_ef46b9b5dd6af5::t_42cb3aa22c0a0c 21-22,24
+src/world/landmarks/pavillon.js
+  s_ef46b9b5dd6af5::t_42cb3aa22c0a0c 1-5
+src/world/index.js
+  s_ef46b9b5dd6af5::t_6b08ad51a62a5c 74-77,112-116
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "654df1b70159a1b85269a5e8afa38f73c28a0207",
+  "prompts": {},
+  "sessions": {
+    "s_ef46b9b5dd6af5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f85315ef-fe48-4dc6-909b-e4b37c593d55",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Manuel Darcemont <manuel@usetandem.ai>"
+    }
+  }
+}
