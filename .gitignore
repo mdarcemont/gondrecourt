@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.shots/
+.DS_Store
+# Street View screenshots are Google's copyright: keep them local, never commit
+reference/photos/*
+!reference/photos/.gitkeep

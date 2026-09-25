@@ -1,0 +1,201 @@
+{
+  "_doc": "Small things that make the place alive. Each item says what it is, where it goes, and how sure we are. 'seen' = visible in a reference photo at that place; 'type-seen' = the kind of object is in the photos but the exact positions are a rule; 'remembered' = from Manuel; 'invented' = typical of a Lorraine village, not of this spot. Placement: 'building' is a landmark id or a BD TOPO id; 'facade' is 'street' or 'toward:<x>,<z>'.",
+  "items": [
+    {
+      "type": "lampPost",
+      "road": 248524263,
+      "at": "ends",
+      "side": "both",
+      "confidence": "type-seen",
+      "source": "green double-arm lamp posts on the bridge: sv-le-central-river, sv-bridge-to-mairie"
+    },
+    {
+      "type": "lampPost",
+      "road": "Place de l'Hôtel de Ville",
+      "every": 26,
+      "side": "right",
+      "confidence": "type-seen",
+      "source": "sv-bridge-to-mairie, sv-pharmacie-wide"
+    },
+    {
+      "type": "balcony",
+      "building": "pharmacie",
+      "facade": "street",
+      "floor": 1,
+      "along": [
+        0.3,
+        0.52
+      ],
+      "width": 2.2,
+      "confidence": "seen",
+      "source": "wrought-iron balconies on the first floor: sv-pharmacie-facade"
+    },
+    {
+      "type": "balcony",
+      "building": "BATIMENT0000002245471101",
+      "facade": "toward:16.5,-60",
+      "floor": 1,
+      "along": [
+        0.5
+      ],
+      "width": 5.5,
+      "confidence": "seen",
+      "source": "long wrought-iron balcony on the house at the south-east end of the bridge: sv-bridge-to-mairie"
+    },
+    {
+      "type": "shopfront",
+      "building": "BATIMENT0000002245471100",
+      "name": "BOULANGERIE",
+      "sub": "Pâtisserie · Viennoiserie",
+      "colour": 9067066,
+      "awning": 9067066,
+      "board": "Pain chaud",
+      "confidence": "requested",
+      "source": "Manuel asked for a boulangerie on the Place; position chosen: BD TOPO 'commerce' building facing the pharmacy. Tell me the real one."
+    },
+    {
+      "type": "shopfront",
+      "name": "LA POSTE",
+      "colour": 16106496,
+      "text": 2710668,
+      "confidence": "seen",
+      "source": "OpenStreetMap amenity=post_office",
+      "atPoint": [
+        21,
+        -4
+      ]
+    },
+    {
+      "type": "shopfront",
+      "name": "Léna'turelle",
+      "sub": "Institut de beauté",
+      "colour": 7907690,
+      "confidence": "seen",
+      "source": "OpenStreetMap shop=beauty (name only; the front is not photographed)",
+      "atPoint": [
+        -18,
+        22
+      ]
+    },
+    {
+      "type": "shopfront",
+      "building": "BATIMENT0000002245470822",
+      "name": "BOUCHERIE · CHARCUTERIE",
+      "colour": 10691114,
+      "awning": 10691114,
+      "confidence": "invented",
+      "source": "typical shop for the Place; not checked"
+    },
+    {
+      "type": "shopfront",
+      "building": "BATIMENT0000002245470873",
+      "name": "COIFFURE",
+      "colour": 4868714,
+      "confidence": "invented",
+      "source": "typical shop for the Place; BD TOPO says 'commerce' here; name not checked"
+    },
+    {
+      "type": "parkedCars",
+      "parking": 801857160,
+      "share": 0.9,
+      "seed": 3,
+      "confidence": "type-seen",
+      "source": "cars parked in the bays by the pharmacy: sv-pharmacie-wide"
+    },
+    {
+      "type": "parkedCars",
+      "road": "Place de l'Hôtel de Ville",
+      "every": 5.6,
+      "side": "right",
+      "offset": 2.6,
+      "range": [
+        18,
+        62
+      ],
+      "share": 0.6,
+      "seed": 5,
+      "confidence": "type-seen",
+      "source": "cars along the kerb on the Place: sv-bridge-to-mairie"
+    },
+    {
+      "type": "bench",
+      "points": [
+        [
+          -12,
+          37
+        ],
+        [
+          -1.5,
+          37.5
+        ]
+      ],
+      "facing": [
+        -6.86,
+        35.04
+      ],
+      "confidence": "invented",
+      "source": "benches round the monument; not checked"
+    },
+    {
+      "type": "planter",
+      "points": [
+        [
+          -4,
+          30
+        ],
+        [
+          4,
+          31
+        ],
+        [
+          -7,
+          42.5
+        ]
+      ],
+      "confidence": "invented",
+      "source": "geranium planters on the Place; not checked"
+    },
+    {
+      "type": "lampPost",
+      "road": "Place de l'Hôtel de Ville",
+      "every": 30,
+      "side": "left",
+      "range": [
+        70,
+        150
+      ],
+      "confidence": "type-seen",
+      "source": "lamp posts round the Place: sv-bridge-to-mairie"
+    },
+    {
+      "type": "parkedCars",
+      "road": 248524291,
+      "every": 5.6,
+      "side": "left",
+      "offset": 2.6,
+      "range": [
+        6,
+        40
+      ],
+      "share": 0.55,
+      "seed": 9,
+      "confidence": "type-seen",
+      "source": "cars along the kerb round the Place; not checked car by car"
+    },
+    {
+      "type": "parkedCars",
+      "road": "Rue du Pont",
+      "every": 5.6,
+      "side": "right",
+      "offset": 2.6,
+      "range": [
+        8,
+        40
+      ],
+      "share": 0.5,
+      "seed": 13,
+      "confidence": "type-seen",
+      "source": "cars along the Rue du Pont: sv-rue-du-pont-north"
+    }
+  ]
+}

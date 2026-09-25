@@ -1,0 +1,14 @@
+{
+  "south": 48.51,
+  "west": 5.502,
+  "north": 48.5155,
+  "east": 5.511,
+  "origin": {
+    "lat": 48.513,
+    "lon": 5.5061,
+    "note": "Place de l'Hôtel de Ville, between Le Central and the mairie"
+  },
+  "width": 1330,
+  "height": 1223,
+  "res": 0.5
+}

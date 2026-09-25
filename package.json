@@ -1,0 +1,27 @@
+{
+  "name": "gondrecourt-3d",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Gondrecourt-le-Château, rebuilt from open data and rendered as a cel-shaded painted background.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "fetch": "tools/overpass.sh tools/osm.ql data/raw/osm.json && node tools/fetch-bdtopo.mjs && node tools/fetch-terrain.mjs && node tools/fetch-aerial.mjs",
+    "build:world": "node tools/build-world.mjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "jpeg-js": "^0.4.4",
+    "vite": "^6.0.0",
+    "vitest": "^3.2.0"
+  }
+}

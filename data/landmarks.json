@@ -1,0 +1,110 @@
+{
+  "_doc": "Places that must be recognisable. Each one is linked to its real footprint by an OSM element; 'facts' are what the model must show, each with where it was checked. 'verified' flips to true only after a side-by-side check against a reference view.",
+  "landmarks": [
+    {
+      "id": "le-central",
+      "name": "Bar-Hôtel-Restaurant Le Central",
+      "osm": "node/11269457834",
+      "facts": [
+        "three storeys, hipped tile roof, white render, teal-green shutters, wrought-iron guards on some upper windows",
+        "east face (toward the Place): shop window and door with steps; 'BAR-HOTEL-RESTAURANT' over 'Le Central' in green",
+        "north face (along the river): 'BAR - HOTEL - RESTAURANT' in green letters above the ground floor",
+        "tabac carotte, Gold, PMU and FDJ signs stacked at the north-east corner",
+        "one-storey annex on the river bank (BD TOPO BATIMENT...1067): glazed veranda with small panes and a red-brown lower wall, 'RESTAURATION RAPIDE / PIZZAS KEBAB' sign; at its east end a terrace with tables, a white-framed awning and a black wrought-iron railing over the Ornain",
+        "tricolour bunting on the railing along the water, a lamp post hung with red geraniums at the corner"
+      ],
+      "sources": [
+        "reference/photos/sv-le-central-river.png (Street View, Apr 2026)",
+        "reference/photos/sv-bridge-to-mairie.png",
+        "user photos 2026-09-25: corner view, terrace, business card (clipboard)"
+      ],
+      "verified": false,
+      "annexes": [
+        "BATIMENT0000002245471067"
+      ]
+    },
+    {
+      "id": "mairie",
+      "name": "Mairie (Hôtel de Ville)",
+      "osm": "way/454548667",
+      "facts": [
+        "CONFIRMED by user photo: 'HOTEL DE VILLE' on three raised plaques above the first floor",
+        "ochre render with pale stone quoins and window surrounds; hipped brown-red tile roof with chimneys",
+        "four bays: ground floor = green arched door + three windows; first floor = four tall windows with green frames; attic = four small windows",
+        "flower boxes (pink, white, red petunias) under the first-floor and ground-floor windows; two green wall lamps",
+        "a wide flight of stone steps up from the square, with a band of stepped stone cubes on its right",
+        "monument aux morts to the right of the steps: stone pillar with the Cross of Lorraine, ball finial, painted poilu in horizon blue holding a shield, lavender bed around it"
+      ],
+      "sources": [
+        "user photo 2026-09-25 (clipboard): mairie facade, steps and monument"
+      ],
+      "verified": false
+    },
+    {
+      "id": "tour",
+      "name": "Tour de Gondrecourt (Musée Lorrain du Cheval)",
+      "osm": "way/370837984",
+      "facts": [
+        "round 15th-century tower, joined to the 18th-century former tribunal",
+        "on the plateau of the upper town, about 18 m above the square",
+        "BD TOPO: its own 21-sided footprint, radius 4.3-5.0 m, wall top 28.7 m, top 30.7 m above the square; the OSM museum polygon is the tribunal beside it"
+      ],
+      "sources": [
+        "fr.wikipedia.org/wiki/Gondrecourt-le-Château",
+        "IGN RGE ALTI: 313.8 m at the tower vs 295.5 m at the square"
+      ],
+      "verified": false,
+      "bdtopo": "BATIMENT0000002245471392",
+      "replace": true
+    },
+    {
+      "id": "pharmacie",
+      "name": "Pharmacie de l'Ornain",
+      "osm": "node/11269409522",
+      "facts": [
+        "beige render, teal shutters, wrought-iron balconies on the first floor",
+        "teal cross and 'PHARMACIE DE L'ORNAIN' lettering, green LED cross on a bracket"
+      ],
+      "sources": [
+        "reference/photos/sv-pharmacie-facade.png",
+        "reference/photos/sv-pharmacie-wide.png"
+      ],
+      "verified": false
+    },
+    {
+      "id": "eglise",
+      "name": "Église de la Nativité-de-la-Vierge",
+      "osm": "way/454548668",
+      "facts": [
+        "pale limestone, unrendered; 11th-century, listed monument historique 1970",
+        "west front on the Place de l'Église: pointed-arch portal with a red door, rose window above, stone cross on the gable",
+        "square bell tower behind the front, paired arched louvred openings, a clock, a steep four-sided slate spire with a cross and weathervane",
+        "LiDAR HD: spire tip 24.2 m above ground at (-5.2, 132.3); tower about 7 m square; nave roof about 11-12 m"
+      ],
+      "sources": [
+        "user Street View capture 2026-09-25 (11 Rue de l'Église, May 2026)",
+        "IGN LiDAR HD MNH",
+        "fr.wikipedia.org/wiki/Gondrecourt-le-Château"
+      ],
+      "verified": false,
+      "replace": false
+    },
+    {
+      "id": "monument",
+      "name": "Monument aux morts",
+      "osm": "node/13351525154",
+      "facts": [
+        "stone pillar with the Cross of Lorraine and a ball finial",
+        "painted poilu in horizon blue holding a shield, on the pedestal in front",
+        "lavender and grasses around it",
+        "beside the steps up to the mairie"
+      ],
+      "sources": [
+        "user photo 2026-09-25 (mairie)",
+        "OpenStreetMap historic=memorial"
+      ],
+      "verified": false,
+      "standalone": true
+    }
+  ]
+}
