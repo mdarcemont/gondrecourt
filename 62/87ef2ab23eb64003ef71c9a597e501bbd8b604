@@ -1,0 +1,249 @@
+src/geo/roof.js
+  s_ef46b9b5dd6af5::t_9e415ace85a7e5 1-39
+  s_ef46b9b5dd6af5::t_b1b12995f567ce 40-71
+src/world/car-models.js
+  s_ef46b9b5dd6af5::t_d179b998b5b0b6 1-79
+tests/bridge.test.js
+  s_ef46b9b5dd6af5::t_302ce1046f7e06 1-16
+src/world/ground.js
+  s_ef46b9b5dd6af5::t_46a13a5ab19846 1-7,9-20,36-39,44-45,48-57,59-67
+  s_ef46b9b5dd6af5::t_7c5a4791dd3864 8,21-30,40,42-43,46-47
+  s_ef46b9b5dd6af5::t_a4a04dc5fd4219 31-35,41,58
+src/geo/bridge.js
+  s_ef46b9b5dd6af5::t_972aa325afca0c 1-21
+src/world/roads.js
+  s_ef46b9b5dd6af5::t_7e20ea71484bb8 1-99,102-105
+  s_ef46b9b5dd6af5::t_bff08423adb457 100-101
+src/world/landmarks/tour.js
+  s_ef46b9b5dd6af5::t_4c86a8036d9bb2 1-34
+README.md
+  s_ef46b9b5dd6af5::t_06483cf5324c2b 23,35-36,38,45-47
+  s_ef46b9b5dd6af5::t_a8a2f9d7b91327 82,84-92
+  s_ef46b9b5dd6af5::t_9aa95a69523549 1-22,24-34,37,39-44,48-81,83
+src/engine/clouds.js
+  s_ef46b9b5dd6af5::t_aa28d607e028b6 1-43
+src/geo/polygon.js
+  s_ef46b9b5dd6af5::t_ed31fafc397b28 1-125
+tests/colour.test.js
+  s_ef46b9b5dd6af5::t_9831fd62e33f01 1-27
+tests/cars.test.js
+  s_ef46b9b5dd6af5::t_d179b998b5b0b6 1-29
+src/engine/util.js
+  s_ef46b9b5dd6af5::t_aa28d607e028b6 1-144
+src/world/textures.js
+  s_ef46b9b5dd6af5::t_61249e8f558c07 1-61,64,67-99
+  s_ef46b9b5dd6af5::t_8ca72646e30007 112-162,198
+  s_ef46b9b5dd6af5::t_4c86a8036d9bb2 100-111
+  s_ef46b9b5dd6af5::t_bab054d20a1e55 62-63,65-66,163-197
+data/landmarks.json
+  s_ef46b9b5dd6af5::t_f0a9f90491205c 16-17,20,30,37-38,40,49-50,52-58,67-70,78,83-84,87,105
+  s_ef46b9b5dd6af5::t_75b966101444af 9-14,18-19,21-24,31-36,39,110
+  s_ef46b9b5dd6af5::t_7b9b93d0bc54e2 79-82,85-86,88-104
+  s_ef46b9b5dd6af5::t_d9ddc4245a1a70 106-107
+  s_ef46b9b5dd6af5::t_88060a0b68b245 1-8,15,25-29,41-48,51,59-66,71-77,108-109
+src/hud.js
+  s_ef46b9b5dd6af5::t_b2b8580ac5547c 1-51
+src/world/shops.js
+  s_ef46b9b5dd6af5::t_b4f820b53c268e 1-77
+tools/build-world.mjs
+  s_ef46b9b5dd6af5::t_d9ddc4245a1a70 87
+  s_ef46b9b5dd6af5::t_f0a9f90491205c 56-58,84-86
+  s_ef46b9b5dd6af5::t_75b966101444af 89-91
+  s_ef46b9b5dd6af5::t_2b6cdf1774ab4b 15
+  s_ef46b9b5dd6af5::t_985620ba71476b 16,66-79,104,106-107,124
+  s_ef46b9b5dd6af5::t_685c80ac4785d8 1-14,17-46,59-65,80-83,88,92-103,105,108-123,125-126
+  s_ef46b9b5dd6af5::t_1ead78a4430d3d 47-55
+src/world/landmarks/common.js
+  s_ef46b9b5dd6af5::t_168797c94f5613 1-53
+src/geo/colour.js
+  s_ef46b9b5dd6af5::t_9831fd62e33f01 42-44,46-49,51-59
+  s_ef46b9b5dd6af5::t_4aa6bc411224c1 1-41,45,50,60-68
+src/engine/palette.js
+  s_ef46b9b5dd6af5::t_d82f319118555d 1-80
+src/engine/toon.js
+  s_ef46b9b5dd6af5::t_aa28d607e028b6 1-167
+src/geo/trees.js
+  s_ef46b9b5dd6af5::t_eb6ba3b32742f2 1-72
+src/world/life.js
+  s_ef46b9b5dd6af5::t_8d9d965a153e1b 1-75
+src/world/landmarks/mairie/facade.js
+  s_ef46b9b5dd6af5::t_dbdd3e97e9a9a4 1-94
+tools/lib/osm.mjs
+  s_ef46b9b5dd6af5::t_0d5159f7eaa43d 1-70
+tools/lib/aerial.mjs
+  s_ef46b9b5dd6af5::t_f3ae6e3fc1e99a 1-105
+src/world/meshbuffer.js
+  s_ef46b9b5dd6af5::t_767286ecebaa38 1-51
+src/world/landmarks/mairie/stairs.js
+  s_ef46b9b5dd6af5::t_dbdd3e97e9a9a4 1-58
+src/world/landmarks/eglise-textures.js
+  s_ef46b9b5dd6af5::t_7d1483076c3ff9 1-96
+src/main.js
+  s_ef46b9b5dd6af5::t_b81da7b8cd38e2 17-18,49-54,69-76,84,93-94
+  s_ef46b9b5dd6af5::t_cd0064fcfd9554 1-16,19-48,55-68,77-83,85-92,95-107
+src/engine/post.js
+  s_ef46b9b5dd6af5::t_aa28d607e028b6 1-305
+src/geo/wander.js
+  s_ef46b9b5dd6af5::t_be25c3e56fa6a8 1-22
+src/world/landmarks/mairie/index.js
+  s_ef46b9b5dd6af5::t_d8fd4c7aa93e9c 1-47
+src/world/landmarks/pharmacie.js
+  s_ef46b9b5dd6af5::t_4c86a8036d9bb2 1-37
+src/world/landmarks/eglise.js
+  s_ef46b9b5dd6af5::t_d179b998b5b0b6 15
+  s_ef46b9b5dd6af5::t_7d1483076c3ff9 1-13,16-122
+  s_ef46b9b5dd6af5::t_a8a2f9d7b91327 14
+src/world/trees.js
+  s_ef46b9b5dd6af5::t_9831fd62e33f01 66-67,69
+  s_ef46b9b5dd6af5::t_36aaef04f01c1d 1-65,68,70-73,86-88
+  s_ef46b9b5dd6af5::t_70cae6b8352abf 74-85
+package.json
+  s_ef46b9b5dd6af5::t_009e0c1330a49f 1-11,13-27
+  s_ef46b9b5dd6af5::t_985620ba71476b 12
+.gitignore
+  s_ef46b9b5dd6af5::t_aa28d607e028b6 1-7
+src/world/landmarks/monument.js
+  s_ef46b9b5dd6af5::t_7b9b93d0bc54e2 1-106
+src/engine/sky.js
+  s_ef46b9b5dd6af5::t_aa28d607e028b6 1-138
+src/world/landmarks/le-central/index.js
+  s_ef46b9b5dd6af5::t_7bb1a9ed041f72 1-44,46-62,64-65
+  s_ef46b9b5dd6af5::t_55a84920dab44f 45,63
+reference/views.json
+  s_ef46b9b5dd6af5::t_cb43efb00ca703 1-7,15-20,29-33,41-46,54-59,67-70
+  s_ef46b9b5dd6af5::t_a16f5f718ac951 8-14,21-28,34-40,47-53,60-66
+LICENSE-sakura-crossing
+  s_ef46b9b5dd6af5::t_aa28d607e028b6 1-21
+tests/facade.test.js
+  s_ef46b9b5dd6af5::t_ee73ee03ee5db2 1-46
+src/geo/project.js
+  s_ef46b9b5dd6af5::t_25919f6afb290a 28
+  s_ef46b9b5dd6af5::t_bc44886095c12d 1-27,29-31
+src/geo/orient.js
+  s_ef46b9b5dd6af5::t_06a974bb7d0ab1 1-22
+tests/rng.js
+  s_ef46b9b5dd6af5::t_859734dbadb132 1-11
+data/details.json
+  s_ef46b9b5dd6af5::t_fb83ecc7a3ca0e 6-8,14-16,22-29,35-41
+  s_ef46b9b5dd6af5::t_7d05fdb169b539 1-5,9-13,17-21,30-34,42-43,199-201
+  s_ef46b9b5dd6af5::t_cbe7e2922c6958 44-61,67-73,79-123,125-127,130-132,135-168
+  s_ef46b9b5dd6af5::t_d9ddc4245a1a70 62-66,74-78,124,128-129,133-134
+  s_ef46b9b5dd6af5::t_1c65e41dd18b1e 169-198
+src/engine/outline.js
+  s_ef46b9b5dd6af5::t_aa28d607e028b6 1-118
+src/world/lilies.js
+  s_ef46b9b5dd6af5::t_e2a784cb021b8f 1-84
+data/world.json
+  s_ef46b9b5dd6af5::t_d9ddc4245a1a70 1
+src/world/index.js
+  s_ef46b9b5dd6af5::t_151aa5c7fa93fe 1-3,7-18,24-45,53-54,57-58,61-63,67-69,73-74,90-91,93-96,98,101-105,107-116,118-120
+  s_ef46b9b5dd6af5::t_7729833520b719 4-6,22-23,46-52,59-60,64-66,70-72,75,79-89,92,97,99-100,106
+  s_ef46b9b5dd6af5::t_50787330d317db 20
+  s_ef46b9b5dd6af5::t_b81da7b8cd38e2 21,55,76-77,117
+  s_ef46b9b5dd6af5::t_a4a04dc5fd4219 19,56,78
+src/geo/water.js
+  s_ef46b9b5dd6af5::t_83037d1f6387f3 1-65
+src/world/details.js
+  s_ef46b9b5dd6af5::t_cbe7e2922c6958 10-14,18-27,46,49-50,64,85-97,99-116,121-125,133
+  s_ef46b9b5dd6af5::t_367644e0a35166 132,134
+  s_ef46b9b5dd6af5::t_0a61b7c6b1731d 1-9,15-17,28-45,47-48,51-63,65-84,98,117-120,126-131,135-138
+src/audio/ambience.js
+  s_ef46b9b5dd6af5::t_c05a934258fe8c 1-9,11-12,15-110,116-132
+  s_ef46b9b5dd6af5::t_67604ccf8682c2 10,13-14,111-115
+tools/lib/bdtopo.mjs
+  s_ef46b9b5dd6af5::t_698e52d49874aa 1-63
+src/world/cars.js
+  s_ef46b9b5dd6af5::t_b837a46f3d7c2a 1,3-4,7-8,12,17-29,31,33-42,44-48
+  s_ef46b9b5dd6af5::t_f3c5632a2093cc 2,5-6,9-11,13-16,30,32,43
+src/geo/heightfield.js
+  s_ef46b9b5dd6af5::t_fcaf9d653a0fb9 1-34
+tests/wander.test.js
+  s_ef46b9b5dd6af5::t_859734dbadb132 1-29
+src/world/landmarks/le-central/annex.js
+  s_ef46b9b5dd6af5::t_55a84920dab44f 166,174,177
+  s_ef46b9b5dd6af5::t_50154ec7c718d1 1-28,31-165,167-173,175-176,178-197,200-202
+  s_ef46b9b5dd6af5::t_65be9e6d3ab90a 29-30,198-199
+src/world/buildings.js
+  s_ef46b9b5dd6af5::t_9831fd62e33f01 34
+  s_ef46b9b5dd6af5::t_6aa1d4d1eb4e5c 1-11,14-16,18-33,37,39-52,58-60,67-69,71-78,81,87-100,102-109,120,122-123,125,127-144,146
+  s_ef46b9b5dd6af5::t_6a7123f28c893b 12,17,53-54,101,110-112,119,121,145
+  s_ef46b9b5dd6af5::t_a4a04dc5fd4219 13,35-36,38
+  s_ef46b9b5dd6af5::t_7d1483076c3ff9 55-57,113-118
+  s_ef46b9b5dd6af5::t_ccc7e45d6dbb79 61-66,70,79-80,82-86,124,126
+src/world/flowers.js
+  s_ef46b9b5dd6af5::t_6d9a3096723287 1-52,54-108
+  s_ef46b9b5dd6af5::t_3e59eb7bb51e40 53
+src/world/car-mesh.js
+  s_ef46b9b5dd6af5::t_52e89e0596ceed 1-131
+tests/geo.test.js
+  s_ef46b9b5dd6af5::t_aad9e5de495678 1-140
+  s_ef46b9b5dd6af5::t_b1b12995f567ce 141-154
+src/compare.js
+  s_ef46b9b5dd6af5::t_978d264b24fd4f 1-74
+src/world/props.js
+  s_ef46b9b5dd6af5::t_d2d1ec0f2755f8 1-8,10-72,81-106
+  s_ef46b9b5dd6af5::t_cbe7e2922c6958 107-135
+  s_ef46b9b5dd6af5::t_50787330d317db 9
+  s_ef46b9b5dd6af5::t_3e45bc40a7517e 73-80
+src/world/river.js
+  s_ef46b9b5dd6af5::t_455f488b8ef8ec 1-10,12-14,16-23,26-38,45-49,51-66
+  s_ef46b9b5dd6af5::t_8ca72646e30007 11,15,24-25,39-42,44,50
+  s_ef46b9b5dd6af5::t_06483cf5324c2b 43
+tests/water.test.js
+  s_ef46b9b5dd6af5::t_2b6cdf1774ab4b 1-35
+src/player.js
+  s_ef46b9b5dd6af5::t_2e3468edbbc80d 12-13
+  s_ef46b9b5dd6af5::t_f2db15dd1db4dc 1-11,14-97
+data/raw/aerial/meta.json
+  s_ef46b9b5dd6af5::t_009e0c1330a49f 1-14
+index.html
+  s_ef46b9b5dd6af5::t_67604ccf8682c2 51
+  s_ef46b9b5dd6af5::t_b81da7b8cd38e2 43
+  s_ef46b9b5dd6af5::t_7ac24e07b0a7c4 1-42,44-50,52-54
+src/geo/facade.js
+  s_ef46b9b5dd6af5::t_51b3e56539d452 1-48
+tools/fetch-aerial.mjs
+  s_ef46b9b5dd6af5::t_009e0c1330a49f 1-50
+tools/fetch-bdtopo.mjs
+  s_ef46b9b5dd6af5::t_88060a0b68b245 1-24
+vite.config.js
+  s_ef46b9b5dd6af5::t_aa28d607e028b6 1-64
+src/world/landmarks/index.js
+  s_ef46b9b5dd6af5::t_fb83ecc7a3ca0e 6
+  s_ef46b9b5dd6af5::t_7b9b93d0bc54e2 3-4,9-11,13
+  s_ef46b9b5dd6af5::t_4c86a8036d9bb2 1-2,5,7-8,12
+data/raw/bdtopo_batiment.json
+  s_ef46b9b5dd6af5::t_e24781c59ba8f3 1
+data/raw/osm.json
+  s_ef46b9b5dd6af5::t_253c329ca3f4c1 1-46051
+data/raw/terrain.json
+  s_ef46b9b5dd6af5::t_c4e816a548cbec 1
+package-lock.json
+  s_ef46b9b5dd6af5::t_b2e783f05241a3 1-1667
+tests/trees.test.js
+  s_ef46b9b5dd6af5::t_76dcdbb2e4a8b8 1-47
+tools/area.json
+  s_ef46b9b5dd6af5::t_54d67bf11a253e 1-2
+tools/fetch-terrain.mjs
+  s_ef46b9b5dd6af5::t_9f68611ba3831f 1-63
+tools/osm.ql
+  s_ef46b9b5dd6af5::t_0da851935fbd92 1-6
+tools/overpass.sh
+  s_ef46b9b5dd6af5::t_39dfdd80290927 1-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6287ef2ab23eb64003ef71c9a597e501bbd8b604",
+  "prompts": {},
+  "sessions": {
+    "s_ef46b9b5dd6af5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f85315ef-fe48-4dc6-909b-e4b37c593d55",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Manuel Darcemont <manuel@usetandem.ai>"
+    }
+  }
+}
