@@ -11,11 +11,13 @@ import { PAL, RENDER_WALLS } from '../engine/palette.js';
 import { cel } from '../engine/toon.js';
 import { planHipRoof, planRoof } from '../geo/roof.js';
 import { paintRoof } from '../geo/colour.js';
+import { centroid } from '../geo/polygon.js';
 import { createMeshBuffer, triangulate } from './meshbuffer.js';
 import { windowBay } from './textures.js';
 
 export const BAY = 3.2; // metres per window bay
-const SHUTTERS = [PAL.shutterTeal, PAL.shutterGrey, PAL.shutterGreen, PAL.frameWhite];
+// from the reference photos: teal and grey-green are commonest, then roller shutters, blue, brown-red
+const SHUTTERS = [PAL.shutterTeal, PAL.shutterTeal, PAL.shutterGrey, PAL.shutterGreen, 'roller', 'roller', 0x2f5fb0, 0x8a3a2a, 0x7a5a3a];
 const WINDOWED = new Set(['Résidentiel', 'Commercial et services', 'Indifférencié', null]);
 
 /** Small deterministic hash of a building id, so colours never reshuffle. */
@@ -97,6 +99,28 @@ function addRoof(buf, plan, colour) {
   });
 }
 
+/** One or two chimney stacks on the ridge of house-like buildings (seeded). */
+function chimneys(buildings, plans) {
+  const spots = buildings.flatMap((b) => {
+    const seed = seedOf(b.id);
+    if (seed % 5 === 0) return [];
+    const c = centroid(b.ring);
+    const u = b.ridgeDir;
+    const extent = Math.max(...b.ring.map((p) => Math.abs((p[0] - c[0]) * u[0] + (p[1] - c[1]) * u[1])));
+    const offsets = seed % 3 === 0 ? [-0.55, 0.55] : [((seed >>> 4) % 2 ? 1 : -1) * 0.5];
+    return offsets.map((k) => {
+      const p = [c[0] + u[0] * extent * k, c[1] + u[1] * extent * k];
+      return { p, y: plans.get(b.id).heightAt(p) };
+    });
+  });
+  const mesh = new THREE.InstancedMesh(new THREE.BoxGeometry(0.55, 1.6, 0.7), cel({ color: 0xd8cfbf }), Math.max(1, spots.length));
+  const m = new THREE.Matrix4();
+  spots.forEach(({ p, y }, i) => mesh.setMatrixAt(i, m.makeTranslation(p[0], y + 0.45, p[1])));
+  mesh.count = spots.length;
+  mesh.castShadow = true;
+  return mesh;
+}
+
 /**
  * overrides: { [buildingId]: { wall, roof, shutter, windows, roofShape, floors } } from landmarks.
  * Returns the group plus the roof plans, which landmarks and collision reuse.
@@ -129,6 +153,7 @@ export function buildBuildings(buildings, overrides = {}) {
   });
 
   const group = new THREE.Group();
+  group.add(chimneys(buildings.filter((b) => plans.get(b.id)?.kind !== 'flat' && styles.get(b.id)?.windows), plans));
   const mesh = (buf, material) => {
     if (buf.empty) return;
     const m = new THREE.Mesh(buf.toGeometry(), material);

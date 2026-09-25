@@ -57,21 +57,38 @@ function chalkboard(lines) {
 
 /**
  * f: facade (from facadeToward), floorY: pavement height at the shop.
- * spec: { name, sub, colour, text, awning, board }
+ * spec: { name, sub, colour, text, font, awning, board, canopy, lower, logo,
+ *         along (0..1 centre on the facade, default 0.5), width (metres) }
  */
 export function shopfront(f, floorY, spec) {
   const g = new THREE.Group();
-  const width = Math.min(f.length * 0.85, 7);
-  const add = (obj, along, y, out) => g.add(onFacade(obj, f, { along, y, out }));
-  add(plane(width, 0.62, spec.colour), 0.5, floorY + 3.0, 0.04);
-  add(signPanel(spec.name, 0.4, { color: spec.text ?? PAL.frameWhite, bg: spec.colour, font: 'bold 84px Georgia, serif', maxWidth: width * 0.9 }), 0.5, floorY + 3.02, 0.06);
-  if (spec.sub) add(signPanel(spec.sub, 0.2, { color: spec.colour, bg: PAL.frameWhite, font: 'italic 60px Georgia, serif', maxWidth: width * 0.5 }), 0.3, floorY + 2.45, 0.06);
+  const width = Math.min(spec.width ?? f.length * 0.85, f.length - 0.2);
+  const centre = spec.along ?? 0.5;
+  const at = (m) => centre + m / f.length; // metres from the shop's centre -> fraction of the facade
+  const add = (obj, m, y, out) => g.add(onFacade(obj, f, { along: at(m), y, out }));
+  const fascia = spec.fasciaY ?? 3.0;
+  if (spec.name) {
+    add(plane(width, 0.62, spec.colour), 0, floorY + fascia, 0.04);
+    add(signPanel(spec.name, 0.4, { color: spec.text ?? PAL.frameWhite, bg: spec.colour, font: spec.font ?? 'bold 84px Georgia, serif', maxWidth: width * 0.9 }), 0, floorY + fascia + 0.02, 0.06);
+  }
+  if (spec.sub) add(signPanel(spec.sub, 0.2, { color: spec.colour, bg: PAL.frameWhite, font: 'italic 60px Georgia, serif', maxWidth: width * 0.5 }), -width * 0.2, floorY + fascia - 0.55, 0.06);
   const win = Math.min(width * 0.55, 3.2);
-  add(plane(win + 0.2, 2.0, spec.colour), 0.38, floorY + 1.3, 0.04);
-  add(plane(win, 1.8, PAL.glassDark), 0.38, floorY + 1.3, 0.06);
-  add(plane(1.05, 2.3, spec.colour), 0.8, floorY + 1.15, 0.04);
-  add(plane(0.85, 2.15, PAL.glassDark), 0.8, floorY + 1.1, 0.06);
-  if (spec.awning) add(awning(width, spec.awning), 0.5, floorY + 2.75, 0.02);
-  if (spec.board) add(chalkboard(spec.board), 0.95, floorY, 1.3);
+  const frame = spec.frame ?? spec.colour;
+  add(plane(win + 0.2, 2.0, frame), -width * 0.18, floorY + 1.3, 0.04);
+  add(plane(win, 1.8, PAL.glassDark), -width * 0.18, floorY + 1.3, 0.06);
+  add(plane(1.05, 2.3, frame), width * 0.32, floorY + 1.15, 0.04);
+  add(plane(0.85, 2.15, PAL.glassDark), width * 0.32, floorY + 1.1, 0.06);
+  if (spec.lower) add(plane(width, 0.5, spec.lower), 0, floorY + 0.25, 0.05);
+  if (spec.awning) add(awning(width, spec.awning), 0, floorY + 2.75, 0.02);
+  if (spec.canopy) {
+    const roof = new THREE.Mesh(new THREE.BoxGeometry(width + 0.4, 0.12, 1.2), cel({ color: spec.canopy }));
+    roof.rotation.x = 0.28;
+    roof.position.z = 0.55;
+    const holder = new THREE.Group();
+    holder.add(roof);
+    add(holder, 0, floorY + 2.75, 0);
+  }
+  if (spec.logo) add(plane(0.7, 0.45, spec.logo), -width * 0.3, floorY + fascia + 0.65, 0.06);
+  if (spec.board) add(chalkboard(spec.board), width * 0.45, floorY, 1.3);
   return g;
 }

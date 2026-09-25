@@ -12,10 +12,10 @@ import { buildSky } from './engine/sky.js';
 import { setOutlineResolution } from './engine/outline.js';
 import { buildWorld } from './world/index.js';
 import { createPlayer } from './player.js';
-import { createCompare } from './compare.js';
 import { createHud } from './hud.js';
 import { createAmbience } from './audio/ambience.js';
 import { centroid } from './geo/polygon.js';
+import { createTravel } from './travel.js';
 
 const canvas = document.getElementById('view');
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: false, powerPreference: 'high-performance', stencil: false });
@@ -55,7 +55,7 @@ const ambience = createAmbience({ water: world.data.water, church: { x: cx, y: (
 const spawnView = { x: 15.0, z: -53.0, yaw: 1.45, pitch: 0.02 }; // on the bridge, facing Le Central
 const player = createPlayer(camera, canvas, world, spawnView);
 const pipeline = new Pipeline(renderer, scene, camera);
-const hud = createHud(player);
+const hud = createHud();
 
 function setViewport(w, h) {
   camera.aspect = w / h;
@@ -63,8 +63,9 @@ function setViewport(w, h) {
   pipeline.setSize(w, h);
   setOutlineResolution(pipeline.size.x, pipeline.size.y);
 }
-const compare = createCompare({ canvas, camera, player, onResize: setViewport, flash: hud.flash });
-compare.layout();
+window.addEventListener('resize', () => setViewport(window.innerWidth, window.innerHeight));
+setViewport(window.innerWidth, window.innerHeight);
+createTravel({ player, flash: hud.flash });
 
 hud.onStart = () => {
   ambience.start();
@@ -81,7 +82,6 @@ window.addEventListener('keydown', (e) => {
   if (e.code === 'KeyO') pipeline.enabled.ink = !pipeline.enabled.ink;
   if (e.code === 'KeyG') pipeline.enabled.grade = !pipeline.enabled.grade;
   if (e.code === 'KeyR') player.teleport(spawnView);
-  if (e.code === 'KeyB') ambience.ring(1);
 });
 
 /* ---- loop ---- */

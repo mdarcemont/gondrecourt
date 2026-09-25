@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { edgeNormal, facadeToward, pushOut } from '../src/geo/facade.js';
+import { edgeNormal, facadeToward, mainFacadeToward, pushOut } from '../src/geo/facade.js';
 import { pointInPolygon } from '../src/geo/polygon.js';
 
 // CCW in (x, z): 12 wide along x, 8 deep along z
@@ -42,5 +42,13 @@ describe('pushOut', () => {
     const out = pushOut(p, house, 0.4, pointInPolygon(p, house));
     expect(out[1]).toBeCloseTo(-0.4, 9);
     expect(pointInPolygon(out, house)).toBe(false);
+  });
+});
+
+describe('mainFacadeToward', () => {
+  it('prefers a long front over a short notch that faces the target better', () => {
+    const notched = [[0, 0], [5, 0], [5, -1], [7, -1], [7, 0], [12, 0], [12, 8], [0, 8]];
+    const f = mainFacadeToward(notched, [6, -30]);
+    expect(f.length).toBeGreaterThanOrEqual(5);
   });
 });

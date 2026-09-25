@@ -16,7 +16,8 @@ const scratch = new Vector3();
 const BELL_PARTIALS = [[0.5, 0.6], [1, 1], [1.183, 0.55], [1.506, 0.35], [2, 0.45], [2.514, 0.2], [2.662, 0.15], [3.011, 0.1]];
 const BELL_NOTE = 196; // G3
 const STRIKE_GAP = 2.4; // seconds between strokes
-const RIVER_REACH = 70; // metres at which the river fades out
+const RIVER_REACH = 35; // metres at which the river fades out
+const RIVER_LEVEL = 0.035; // a trickle you notice only near the water
 
 function noiseBuffer(ctx) {
   const buf = ctx.createBuffer(1, ctx.sampleRate * 3, ctx.sampleRate);
@@ -40,15 +41,25 @@ export function createAmbience({ water, church }) {
   function start() {
     if (ctx) return ctx.resume();
     ctx = new AudioContext();
+    // a small brook, not a weir: quiet, bright, with a slow uneven babble
     const src = ctx.createBufferSource();
     src.buffer = noiseBuffer(ctx);
     src.loop = true;
-    const lp = ctx.createBiquadFilter();
-    lp.type = 'lowpass';
-    lp.frequency.value = 700;
+    const bp = ctx.createBiquadFilter();
+    bp.type = 'bandpass';
+    bp.frequency.value = 1800;
+    bp.Q.value = 0.9;
+    const babble = ctx.createGain();
+    babble.gain.value = 0.6;
+    const lfo = ctx.createOscillator();
+    lfo.frequency.value = 0.35;
+    const lfoDepth = ctx.createGain();
+    lfoDepth.gain.value = 0.35;
+    lfo.connect(lfoDepth).connect(babble.gain);
+    lfo.start();
     riverGain = ctx.createGain();
     riverGain.gain.value = 0;
-    src.connect(lp).connect(riverGain).connect(ctx.destination);
+    src.connect(bp).connect(babble).connect(riverGain).connect(ctx.destination);
     src.start();
     bellPanner = new PannerNode(ctx, { panningModel: 'HRTF', distanceModel: 'inverse', refDistance: 40, rolloffFactor: 0.6 });
     bellPanner.positionX.value = church.x;
@@ -114,7 +125,7 @@ export function createAmbience({ water, church }) {
     l.forwardY.value = fwd.y;
     l.forwardZ.value = fwd.z;
     const d = edges.reduce((m, [a, b]) => Math.min(m, pointSegment([listener.position.x, listener.position.z], a, b).dist), Infinity);
-    riverGain.gain.setTargetAtTime(0.22 * Math.max(0, 1 - d / RIVER_REACH) ** 2, ctx.currentTime, 0.3);
+    riverGain.gain.setTargetAtTime(RIVER_LEVEL * Math.max(0, 1 - d / RIVER_REACH) ** 2, ctx.currentTime, 0.3);
 
     if (ctx.currentTime > nextChirp) {
       chirp();

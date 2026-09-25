@@ -8,13 +8,11 @@
   html, body { margin: 0; height: 100%; overflow: hidden; background: #e4eaf2; color: #3a3548;
     font-family: 'Avenir Next', 'Segoe UI', system-ui, sans-serif; }
   #view { display: block; width: 100vw; height: 100vh; }
-  #ref { position: fixed; pointer-events: none; opacity: 0; transition: opacity .15s; }
   .pill { position: fixed; padding: 7px 14px; border-radius: 10px; font-size: 12.5px;
     background: rgba(252,250,252,.72); border: 1px solid rgba(58,53,72,.18); }
   #hint { left: 16px; bottom: 14px; }
-  #refcap { left: 50%; top: 14px; transform: translateX(-50%); }
-  #refcap:empty, #coords:not(.on) { display: none; }
-  #coords { right: 16px; bottom: 14px; font-family: ui-monospace, Menlo, monospace; }
+  #travel { left: 16px; top: 14px; font-size: 12px; line-height: 1.6; }
+  #travel kbd { font-family: ui-monospace, Menlo, monospace; background: #ece8e2; border-radius: 4px; padding: 0 5px; margin-right: 4px; }
   #attrib { right: 16px; top: 14px; font-size: 11px; opacity: .8; }
   #toast { left: 50%; top: 12%; transform: translateX(-50%); opacity: 0; transition: opacity .25s; }
   #toast.on { opacity: 1; }
@@ -33,20 +31,18 @@
 </head>
 <body>
 <canvas id="view"></canvas>
-<img id="ref" alt="" />
 <div id="overlay">
   <div class="card">
     <h1>Gondrecourt-le-Château</h1>
     <p>Meuse · la ville basse, l'Ornain, et le château en haut.</p>
     <p><kbd>WASD</kbd> marcher · <kbd>Shift</kbd> courir · <kbd>Esc</kbd> libérer la souris</p>
-    <p><kbd>1</kbd>–<kbd>5</kbd> vues de référence · <kbd>F</kbd> superposer la photo · <kbd>0</kbd> quitter</p>
-    <p><kbd>C</kbd> coordonnées · <kbd>Shift C</kbd> copier la pose · <kbd>R</kbd> retour · <kbd>B</kbd> cloche</p>
+    <p><kbd>1</kbd>–<kbd>8</kbd> voyage rapide</p>
+    <p><kbd>R</kbd> retour au pont</p>
     <button id="start">Entrer</button>
   </div>
 </div>
-<div id="hint" class="pill">clic pour regarder · WASD · 1–5 vues de référence</div>
-<div id="refcap" class="pill"></div>
-<div id="coords" class="pill"></div>
+<div id="hint" class="pill">clic pour regarder · WASD · 1–8 voyage rapide</div>
+<div id="travel" class="pill"></div>
 <div id="toast" class="pill"></div>
 <div id="attrib" class="pill">© OpenStreetMap contributors · IGN BD TOPO® / RGE ALTI® / LiDAR HD / BD ORTHO® · rendu d'après Sakura Crossing (MIT)</div>
 <script type="module" src="/src/main.js"></script>

@@ -21,6 +21,7 @@ import { buildDetails } from './details.js';
 import { createLife } from './life.js';
 import { flowerBoxes, windowFlowerSpots } from './flowers.js';
 import { buildLilies } from './lilies.js';
+import { buildUpperTown, upperTownOverrides } from './villehaute.js';
 
 const CELL = 16; // collision grid cell, metres
 
@@ -58,6 +59,7 @@ export function buildWorld(scene, { sky } = {}, data = worldData) {
   const water = data.water.map((w) => w.ring);
   const surfaces = [];
   const extraColliders = [];
+  const walkable = new Set();
 
   const heightAt = (x, z) => {
     const decks = bridges.map((b) => deckHeightAt([x, z], b)).filter((y) => y !== null);
@@ -69,7 +71,8 @@ export function buildWorld(scene, { sky } = {}, data = worldData) {
   const parts = landmarkParts(data);
   const annexIds = new Set(parts.flatMap((l) => l.annexes ?? []));
   const replaced = new Set([...parts.filter((l) => l.replace).map((l) => l.buildingId), ...annexIds]);
-  const overrides = Object.fromEntries(parts.filter((l) => l.buildingId).map((l) => [l.buildingId, l.def.style ?? {}]));
+  const landmarkStyles = Object.fromEntries(parts.filter((l) => l.buildingId).map((l) => [l.buildingId, l.def.style ?? {}]));
+  const overrides = { ...upperTownOverrides(data.buildings, landmarkStyles), ...landmarkStyles };
   const generic = data.buildings.filter((b) => !replaced.has(b.id));
 
   const { group: buildings, styles } = buildBuildings(generic, overrides);
@@ -78,7 +81,7 @@ export function buildWorld(scene, { sky } = {}, data = worldData) {
   scene.add(buildTrees(data.trees ?? [], field.sample, water));
   scene.add(buildLilies(data.water, bridges));
   // landmarks place their own window boxes where the photos show them
-  const ordinary = generic.filter((b) => !overrides[b.id]);
+  const ordinary = generic.filter((b) => !landmarkStyles[b.id]);
   scene.add(flowerBoxes(windowFlowerSpots(ordinary, styles, data.roads)));
 
   const ctx = {
@@ -86,6 +89,7 @@ export function buildWorld(scene, { sky } = {}, data = worldData) {
     heightAt,
     addSurface: (ring, fn) => surfaces.push({ ring, heightAt: fn }),
     addCollider: (ring) => extraColliders.push(ring),
+    makeWalkable: (id) => walkable.add(id),
   };
   parts.forEach((l) => {
     try {
@@ -95,9 +99,10 @@ export function buildWorld(scene, { sky } = {}, data = worldData) {
     }
   });
   scene.add(buildDetails(data, heightAt));
+  scene.add(buildUpperTown(generic.filter((b) => !landmarkStyles[b.id]), data.roads));
 
   // annexes (Le Central's terrace) are walkable: their landmark adds what should block
-  const nearBuildings = spatialIndex([...data.buildings.filter((b) => !annexIds.has(b.id)).map((b) => b.ring), ...extraColliders]);
+  const nearBuildings = spatialIndex([...data.buildings.filter((b) => !annexIds.has(b.id) && !walkable.has(b.id)).map((b) => b.ring), ...extraColliders]);
 
   /** Resolve a proposed position [x, z] for a walker of radius r. */
   const collide = (p, r) => {

@@ -133,3 +133,100 @@ export function planter() {
   g.add(box);
   return g;
 }
+
+/** Pollarded plane tree (knobbly bare-ish crown) on a round iron grate. */
+export function pollardTree(seed = 0.5) {
+  const g = new THREE.Group();
+  const bark = mat(0x8a7a66);
+  const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.17, 2.6, 7), bark);
+  trunk.position.y = 1.3;
+  g.add(trunk);
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * Math.PI * 2 + seed * 3;
+    const br = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.07, 1.4, 5), bark);
+    br.position.set(Math.cos(a) * 0.35, 3.1, Math.sin(a) * 0.35);
+    br.rotation.set(Math.sin(a) * 0.5, 0, -Math.cos(a) * 0.5);
+    g.add(br);
+    const leaves = new THREE.Mesh(new THREE.IcosahedronGeometry(0.42, 0), mat(0x8faa5a));
+    leaves.position.set(Math.cos(a) * 0.7, 3.8, Math.sin(a) * 0.7);
+    g.add(leaves);
+  }
+  const grate = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 0.9, 0.04, 20), mat(0x3a3a40));
+  grate.position.y = 0.02;
+  g.add(grate);
+  g.traverse((o) => { o.castShadow = true; });
+  return g;
+}
+
+/** Orange bistro table with two chairs (Chez Michel's terrace). */
+export function cafeSet() {
+  const g = new THREE.Group();
+  const orange = mat(0xe0612a);
+  const top = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.04, 0.7), orange);
+  top.position.y = 0.74;
+  const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.72), mat(0x9aa1aa));
+  leg.position.y = 0.36;
+  g.add(top, leg);
+  [-1, 1].forEach((s) => {
+    const seat = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.04, 0.42), orange);
+    seat.position.set(s * 0.6, 0.45, 0);
+    const back = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.4, 0.42), orange);
+    back.position.set(s * 0.82, 0.68, 0);
+    const legs = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.43, 0.04), orange);
+    legs.position.set(s * 0.6, 0.22, 0);
+    g.add(seat, back, legs);
+  });
+  return g;
+}
+
+export function bollard() {
+  const b = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.08, 0.9, 8), mat(0x3a3a40));
+  b.position.y = 0.45;
+  const g = new THREE.Group();
+  g.add(b);
+  return g;
+}
+
+/** Yellow La Poste letter box on a post. */
+export function postBox() {
+  const g = new THREE.Group();
+  const box = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.75, 0.4), mat(0xf2c230));
+  box.position.y = 0.9;
+  const cap = new THREE.Mesh(new THREE.CylinderGeometry(0.25, 0.25, 0.5, 12, 1, false, 0, Math.PI), mat(0xf2c230));
+  cap.rotation.z = Math.PI / 2;
+  cap.position.y = 1.27;
+  const post = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.55, 0.16), mat(0x3a3a40));
+  post.position.y = 0.27;
+  g.add(box, cap, post);
+  return g;
+}
+
+/** The disused traffic light standing in a round concrete pot. */
+export function trafficLightPot() {
+  const g = new THREE.Group();
+  const pot = new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.6, 0.9, 16, 1, true), mat(0xbdb8ae));
+  pot.position.y = 0.45;
+  const earth = new THREE.Mesh(new THREE.CircleGeometry(0.58, 16), mat(0x6a5a44));
+  earth.rotation.x = -Math.PI / 2;
+  earth.position.y = 0.8;
+  const head = new THREE.Mesh(new THREE.BoxGeometry(0.34, 1.0, 0.3), mat(0x2a2a2e));
+  head.position.set(0.1, 1.55, 0);
+  head.rotation.z = -0.12;
+  const back = new THREE.Mesh(new THREE.BoxGeometry(0.36, 1.02, 0.06), mat(0xf2c230));
+  back.position.set(0.1, 1.55, -0.17);
+  back.rotation.z = -0.12;
+  g.add(pot, earth, head, back);
+  return g;
+}
+
+/** A-frame chalkboard, "RESTO OUVERT". */
+export function aBoard() {
+  const g = new THREE.Group();
+  [-1, 1].forEach((s) => {
+    const p = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.9, 0.04), mat(0x2e3a33));
+    p.position.set(0, 0.45, s * 0.16);
+    p.rotation.x = s * 0.2;
+    g.add(p);
+  });
+  return g;
+}

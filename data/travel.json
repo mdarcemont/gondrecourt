@@ -1,0 +1,77 @@
+{
+  "_doc": "Fast travel (keys 1-8). Each stop: where you stand (x, z, local metres) and what you look at (look).",
+  "stops": [
+    {
+      "name": "Église",
+      "x": -50,
+      "z": 112,
+      "look": [
+        -10,
+        128
+      ]
+    },
+    {
+      "name": "École maternelle",
+      "x": -206,
+      "z": -312,
+      "look": [
+        -226,
+        -335
+      ]
+    },
+    {
+      "name": "Collège",
+      "x": -238,
+      "z": -205,
+      "look": [
+        -268,
+        -199
+      ]
+    },
+    {
+      "name": "Mairie",
+      "x": 6,
+      "z": 27,
+      "look": [
+        -1,
+        52
+      ]
+    },
+    {
+      "name": "Le Central",
+      "x": 15,
+      "z": -53,
+      "look": [
+        -5,
+        -48
+      ]
+    },
+    {
+      "name": "Crédit Agricole",
+      "x": 82,
+      "z": -107,
+      "look": [
+        112,
+        -108
+      ]
+    },
+    {
+      "name": "Carrefour Contact",
+      "x": 118,
+      "z": -86,
+      "look": [
+        100,
+        -58
+      ]
+    },
+    {
+      "name": "Château",
+      "x": 228,
+      "z": -114,
+      "look": [
+        207,
+        -95
+      ]
+    }
+  ]
+}

@@ -15,12 +15,8 @@ npm test             # geometry unit tests
 | key | |
 |---|---|
 | `W A S D`, `Shift` | walk, run |
-| `1`–`5` | jump to a reference view and overlay its photo |
-| `F` | overlay opacity: off / half / full |
-| `0` | leave the reference view |
-| `C` / `Shift C` | show / copy the current camera pose (JSON) |
+| `1`–`8` | fast travel: église, école, collège, mairie, Le Central, Crédit Agricole, Carrefour, château |
 | `R` | back to the start (the bridge, facing Le Central) |
-| `B` | ring the church bell (it also strikes the real hour by itself) |
 | `O` / `G` | toggle ink / colour grade |
 
 ## Where every part comes from
@@ -56,13 +52,7 @@ Some things are rules, not data, and so can be wrong for one building:
    each landmark to an OSM element (or a BD TOPO id when OSM is wrong, as
    for the tower). The build prints `UNMATCHED` if that link breaks.
    Each landmark lists the facts it must show and where they were checked.
-3. **Reference views are the test.** `reference/views.json` stores the camera
-   pose of each photo. Press its number and `F`: if an edge in the render and
-   in the photo do not line up, the pose or the model is wrong. Tune the pose
-   first (walk until the fixed things, like the bridge and the corners, line up,
-   then `Shift C`, and paste into `views.json`), then fix the model. Set
-   `approx` to `false` when the pose is tuned, and set `verified` in
-   `landmarks.json` to `true` when the landmark matches.
+3. **Photos are the check.** Every landmark in `data/landmarks.json` lists the photos it was built from and the facts it must show.
 4. **Photos stay local.** Street View images are Google's copyright.
    `reference/photos/` is git-ignored and is never in the build. Your own
    photos are better: you can publish them, and you know the date.
@@ -70,12 +60,11 @@ Some things are rules, not data, and so can be wrong for one building:
 ## Adding a place
 
 1. Take 2–3 photos (or Street View captures) and put them in `reference/photos/`.
-2. Add an entry in `reference/views.json` (a rough pose is fine) and in
-   `data/landmarks.json` (the OSM element, with the facts it must show).
+2. Add an entry in `data/landmarks.json` (the OSM element, with the facts it must show).
 3. Add `src/world/landmarks/<id>.js` exporting `style` (to restyle the generic
    building) and `build()` (to add signs and details), and register it in
    `src/world/landmarks/index.js`.
-4. `npm run build:world`, then check it with its reference view.
+4. `npm run build:world`, then compare with the photos.
 
 ## Status
 
@@ -85,7 +74,10 @@ Some things are rules, not data, and so can be wrong for one building:
 | Mairie | From a user photo: painted facade (HOTEL DE VILLE plaques, green frames, quoins), hipped roof, petunia boxes, wall lamps, walkable steps with the stepped-cube band. |
 | Monument aux morts | At its OSM position: pillar, Cross of Lorraine, ball finial, poilu in horizon blue, lavender bed. |
 | Église | From a Street View capture + LiDAR: bell tower at its measured position and height (spire 24.2 m), belfry openings, clock, slate spire, west front with portal, rose window, buttresses, lancet windows. The side aisles are not modelled separately. |
-| Place de l'Hôtel de Ville | Shops (boulangerie *position chosen*, La Poste and Léna'turelle from OSM, boucherie and coiffure *invented*), parked cars, benches, planters, lamp posts. |
+| Place de l'Hôtel de Ville | From 11 captures: La Poste, Restaurant-Pizzeria, Chez Michel (orange café tables), Léna'turelles, the lime shop by Le Central, the blue-shuttered mansard house; benches, pollarded trees, troughs, bollards, post box, the traffic light in its pot, the RESTO board. |
+| École maternelle | White two-storey wing with window ribbons, flag, portholes, red barriers. |
+| Collège | Long cream block, roller shutters, stone base, tall chimney. |
+| Ville haute | 278 buildings on the plateau restyled (render, brown shutters), old lanterns, woodpiles. |
 | Pharmacie de l'Ornain | Lettering, crosses, balconies. |
 | Tour (château) | From 3 user photos + LiDAR (wall 16.5 m, roof tip 22.6 m): rough grey stone, flared brown-tile cone, flag; the tribunal beside it; kiosk, lantern, low wall, bench and woodpile on the street side. |
 | La Carpière | From 7 captures: white hall, dark top band, orange-framed entrance, forecourt; park with stone wall, lavender strip, blue lamps, slabs, playground; the stone railway viaduct. |

@@ -28,6 +28,7 @@ function canvasTexture(key, w, h, draw, { repeat = true, srgb = true } = {}) {
  * u runs along the wall (1 unit = one bay), v up the wall (1 unit = one floor).
  */
 export function windowBay(shutter = PAL.shutterTeal) {
+  const roller = shutter === 'roller';
   return canvasTexture(`bay-${shutter}`, 256, 256, (c, w, h) => {
     c.fillStyle = '#ffffff';
     c.fillRect(0, 0, w, h);
@@ -35,26 +36,37 @@ export function windowBay(shutter = PAL.shutterTeal) {
     const wh = h * 0.5;
     const x = (w - ww) / 2;
     const y = h * 0.2;
-    // shutters, opened back against the wall
-    c.fillStyle = hex(shutter);
-    c.fillRect(x - ww * 0.52, y, ww * 0.48, wh);
-    c.fillRect(x + ww * 1.04, y, ww * 0.48, wh);
-    c.fillStyle = 'rgba(0,0,0,0.12)';
-    for (let i = 1; i < 6; i++) {
-      c.fillRect(x - ww * 0.52, y + (wh * i) / 6, ww * 0.48, 2);
-      c.fillRect(x + ww * 1.04, y + (wh * i) / 6, ww * 0.48, 2);
+    if (!roller) {
+      // louvred shutters, opened back against the wall
+      c.fillStyle = hex(shutter);
+      c.fillRect(x - ww * 0.52, y, ww * 0.48, wh);
+      c.fillRect(x + ww * 1.04, y, ww * 0.48, wh);
+      c.fillStyle = 'rgba(0,0,0,0.14)';
+      for (let i = 1; i < 9; i++) {
+        c.fillRect(x - ww * 0.52, y + (wh * i) / 9, ww * 0.48, 2);
+        c.fillRect(x + ww * 1.04, y + (wh * i) / 9, ww * 0.48, 2);
+      }
     }
-    // stone surround, frame and glass
-    c.fillStyle = '#f2ede2';
-    c.fillRect(x - 6, y - 6, ww + 12, wh + 12);
+    // pale limestone surround (the Lorraine window frame), frame and glass
+    c.fillStyle = '#f4efe3';
+    c.fillRect(x - 9, y - 9, ww + 18, wh + 16);
     c.fillStyle = hex(PAL.frameWhite);
     c.fillRect(x, y, ww, wh);
     c.fillStyle = hex(PAL.glassDark);
     c.fillRect(x + 5, y + 5, ww / 2 - 7, wh - 10);
     c.fillRect(x + ww / 2 + 2, y + 5, ww / 2 - 7, wh - 10);
-    // sill
-    c.fillStyle = '#e9e2d4';
-    c.fillRect(x - 10, y + wh + 4, ww + 20, 7);
+    if (roller) {
+      // white roller shutter, part-way down, with its box on top
+      c.fillStyle = '#f2f2ee';
+      c.fillRect(x + 2, y + 2, ww - 4, wh * 0.45);
+      c.fillStyle = 'rgba(0,0,0,0.08)';
+      for (let k = y + 8; k < y + wh * 0.45; k += 6) c.fillRect(x + 2, k, ww - 4, 1);
+    }
+    // sill, and a thin iron guard rail across the lower pane
+    c.fillStyle = '#ebe4d5';
+    c.fillRect(x - 12, y + wh + 4, ww + 24, 8);
+    c.fillStyle = 'rgba(40,40,46,0.55)';
+    c.fillRect(x, y + wh * 0.72, ww, 2);
   });
 }
 

@@ -46,3 +46,15 @@ export function pushOut(p, ring, r, inside) {
   const away = inside ? norm(sub(nearest.c, p)) : norm(sub(p, nearest.c));
   return [nearest.c[0] + away[0] * r, nearest.c[1] + away[1] * r];
 }
+
+/** The longest edge whose outward normal points at the target within ~45 degrees (a main front). */
+export function mainFacadeToward(ring, target) {
+  const edges = ring.map((a, i) => {
+    const b = ring[(i + 1) % ring.length];
+    const mid = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+    const n = edgeNormal(ring, i);
+    return { a, b, mid, n, length: len(sub(b, a)), score: dot(n, norm(sub(target, mid))) };
+  });
+  const facing = edges.filter((e) => e.score > 0.7);
+  return (facing.length ? facing : edges).reduce((best, e) => (e.length > best.length ? e : best));
+}

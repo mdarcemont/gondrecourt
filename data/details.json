@@ -43,47 +43,6 @@
       "source": "long wrought-iron balcony on the house at the south-east end of the bridge: sv-bridge-to-mairie"
     },
     {
-      "type": "shopfront",
-      "name": "LA POSTE",
-      "colour": 16106496,
-      "text": 2710668,
-      "confidence": "seen",
-      "source": "OpenStreetMap amenity=post_office",
-      "atPoint": [
-        21,
-        -4
-      ]
-    },
-    {
-      "type": "shopfront",
-      "name": "Léna'turelle",
-      "sub": "Institut de beauté",
-      "colour": 7907690,
-      "confidence": "seen",
-      "source": "OpenStreetMap shop=beauty (name only; the front is not photographed)",
-      "atPoint": [
-        -18,
-        22
-      ]
-    },
-    {
-      "type": "shopfront",
-      "building": "BATIMENT0000002245470822",
-      "name": "BOUCHERIE · CHARCUTERIE",
-      "colour": 10691114,
-      "awning": 10691114,
-      "confidence": "invented",
-      "source": "typical shop for the Place; not checked"
-    },
-    {
-      "type": "shopfront",
-      "building": "BATIMENT0000002245470873",
-      "name": "COIFFURE",
-      "colour": 4868714,
-      "confidence": "invented",
-      "source": "typical shop for the Place; BD TOPO says 'commerce' here; name not checked"
-    },
-    {
       "type": "parkedCars",
       "parking": 801857160,
       "share": 0.9,
@@ -105,44 +64,6 @@
       "seed": 5,
       "confidence": "type-seen",
       "source": "cars along the kerb on the Place: sv-bridge-to-mairie"
-    },
-    {
-      "type": "bench",
-      "points": [
-        [
-          -12,
-          37
-        ],
-        [
-          -1.5,
-          37.5
-        ]
-      ],
-      "facing": [
-        -6.86,
-        35.04
-      ],
-      "confidence": "invented",
-      "source": "benches round the monument; not checked"
-    },
-    {
-      "type": "planter",
-      "points": [
-        [
-          -4,
-          30
-        ],
-        [
-          4,
-          31
-        ],
-        [
-          -7,
-          42.5
-        ]
-      ],
-      "confidence": "invented",
-      "source": "geranium planters on the Place; not checked"
     },
     {
       "type": "lampPost",
@@ -217,6 +138,273 @@
       "seed": 37,
       "confidence": "type-seen",
       "source": "car park by the river, seen from Le Central's bridge: user captures"
+    },
+    {
+      "type": "shopfront",
+      "building": "BATIMENT0000002245470869",
+      "facade": "toward:0,0",
+      "name": "LA POSTE",
+      "colour": 14868944,
+      "text": 2710668,
+      "font": "bold 70px Arial, sans-serif",
+      "logo": 15909424,
+      "along": 0.5,
+      "width": 5,
+      "confidence": "seen",
+      "source": "user Street View captures of the Place, Apr 2026"
+    },
+    {
+      "type": "shopfront",
+      "building": "BATIMENT0000002245470877",
+      "facade": "toward:0,5",
+      "name": "RESTAURANT · PIZZERIA",
+      "colour": 13641774,
+      "font": "bold 70px Arial, sans-serif",
+      "lower": 12097066,
+      "frame": 7372858,
+      "canopy": 11037002,
+      "along": 0.84,
+      "width": 3.2,
+      "confidence": "seen",
+      "source": "user Street View captures of the Place, Apr 2026"
+    },
+    {
+      "type": "shopfront",
+      "building": "BATIMENT0000002245470870",
+      "facade": "toward:0,24",
+      "name": "Bar - Restaurant  Chez Michel",
+      "colour": 2236964,
+      "text": 13150554,
+      "font": "italic bold 72px Georgia, serif",
+      "frame": 15658734,
+      "along": 0.45,
+      "width": 7,
+      "confidence": "seen",
+      "source": "user Street View captures of the Place, Apr 2026"
+    },
+    {
+      "type": "shopfront",
+      "atPoint": [
+        -18,
+        22
+      ],
+      "name": "Institut de beauté Léna'turelles",
+      "colour": 15790320,
+      "text": 3815994,
+      "font": "italic bold 70px 'Brush Script MT', Georgia, serif",
+      "frame": 14540253,
+      "width": 4,
+      "confidence": "seen",
+      "source": "user Street View captures of the Place, Apr 2026"
+    },
+    {
+      "type": "shopfront",
+      "building": "BATIMENT0000002245471065",
+      "facade": "toward:20,-37",
+      "colour": 10867498,
+      "frame": 10867498,
+      "canopy": 10050378,
+      "width": 3.4,
+      "confidence": "seen",
+      "source": "lime-green shop front with a tiled canopy beside Le Central (for sale): user captures"
+    },
+    {
+      "type": "prop",
+      "prop": "postBox",
+      "points": [
+        [
+          11.6,
+          -1.5
+        ]
+      ],
+      "rot": -1.57,
+      "confidence": "seen",
+      "source": "user Street View captures of the Place, Apr 2026"
+    },
+    {
+      "type": "planter",
+      "flowers": false,
+      "points": [
+        [
+          8,
+          -5
+        ],
+        [
+          9.5,
+          11.5
+        ],
+        [
+          7,
+          22
+        ]
+      ],
+      "confidence": "seen",
+      "source": "low stone troughs on the esplanade: user Street View captures of the Place, Apr 2026"
+    },
+    {
+      "type": "bench",
+      "points": [
+        [
+          8.5,
+          3.5
+        ],
+        [
+          10.5,
+          8.5
+        ],
+        [
+          8,
+          15.5
+        ],
+        [
+          9.5,
+          19
+        ]
+      ],
+      "facing": [
+        0,
+        12
+      ],
+      "confidence": "seen",
+      "source": "wooden benches with grey iron ends: user Street View captures of the Place, Apr 2026"
+    },
+    {
+      "type": "prop",
+      "prop": "pollardTree",
+      "points": [
+        [
+          11,
+          5.5
+        ],
+        [
+          11.5,
+          15
+        ],
+        [
+          11.5,
+          21.5
+        ],
+        [
+          6.5,
+          12.5
+        ],
+        [
+          -3,
+          -29
+        ],
+        [
+          5,
+          -38
+        ]
+      ],
+      "confidence": "seen",
+      "source": "pollarded trees in round grates: user Street View captures of the Place, Apr 2026"
+    },
+    {
+      "type": "prop",
+      "prop": "cafeSet",
+      "points": [
+        [
+          12,
+          22.5
+        ],
+        [
+          12,
+          26.5
+        ]
+      ],
+      "rot": 1.57,
+      "confidence": "seen",
+      "source": "orange tables and chairs outside Chez Michel: user Street View captures of the Place, Apr 2026"
+    },
+    {
+      "type": "prop",
+      "prop": "trafficLightPot",
+      "points": [
+        [
+          6,
+          18.5
+        ]
+      ],
+      "rot": 1.4,
+      "confidence": "seen",
+      "source": "user Street View captures of the Place, Apr 2026"
+    },
+    {
+      "type": "prop",
+      "prop": "aBoard",
+      "points": [
+        [
+          4.6,
+          20.5
+        ]
+      ],
+      "rot": 1.4,
+      "confidence": "seen",
+      "source": "'RESTO OUVERT' chalkboard: user Street View captures of the Place, Apr 2026"
+    },
+    {
+      "type": "prop",
+      "prop": "bollard",
+      "points": [
+        [
+          5.3,
+          -9
+        ],
+        [
+          5,
+          -5
+        ],
+        [
+          4.6,
+          -1
+        ],
+        [
+          3.8,
+          3
+        ],
+        [
+          -5.6,
+          -12
+        ],
+        [
+          -6.2,
+          -7
+        ],
+        [
+          -7,
+          -2
+        ],
+        [
+          -8.5,
+          34
+        ],
+        [
+          -4,
+          33
+        ]
+      ],
+      "confidence": "seen",
+      "source": "black bollards along the esplanade edges: user Street View captures of the Place, Apr 2026"
+    },
+    {
+      "type": "bench",
+      "points": [
+        [
+          -12,
+          37
+        ],
+        [
+          -1.5,
+          37.5
+        ]
+      ],
+      "facing": [
+        -6.86,
+        35.04
+      ],
+      "confidence": "invented",
+      "source": "benches by the monument; not checked"
     }
   ]
 }

@@ -11,9 +11,12 @@ import * as monument from './monument.js';
 import * as eglise from './eglise.js';
 import * as tribunal from './tribunal.js';
 import * as carpiere from './carpiere/index.js';
-import * as carrefour from './carrefour.js';
-import * as carrefourFacade from './carrefour-facade.js';
+import * as carrefour from './carrefour/index.js';
 import * as creditAgricole from './credit-agricole.js';
 import * as mieMado from './mie-mado.js';
+import * as maisonBleue from './maison-bleue.js';
+import * as ecole from './ecole.js';
+import * as ecoleHall from './ecole-hall.js';
+import * as college from './college.js';
 
-export const LANDMARKS = { 'le-central': leCentral, pharmacie, tour, mairie, monument, eglise, tribunal, carpiere, carrefour, 'carrefour-facade': carrefourFacade, 'credit-agricole': creditAgricole, 'mie-mado': mieMado };
+export const LANDMARKS = { 'le-central': leCentral, pharmacie, tour, mairie, monument, eglise, tribunal, carpiere, carrefour, 'credit-agricole': creditAgricole, 'mie-mado': mieMado, 'maison-bleue': maisonBleue, ecole, 'ecole-hall': ecoleHall, college };

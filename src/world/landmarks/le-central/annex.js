@@ -24,10 +24,11 @@ const SPLIT_X = -6.5;
 const VERANDA_H = 3.0;
 const DECK = 0.25;
 const IRON = 0x2c2c33;
-const CORNER_TO_BRIDGE = [[5.11, -43.78], [7.16, -42.6], [11.0, -41.9]];
-const LAMP_AT = [6.6, -41.2];
+// from the café's corner to the bridge's own railing (west pavement edge ~ (6.3, -43.1)); never across the road
+const CORNER_TO_BRIDGE = [[5.11, -43.78], [6.3, -43.2]];
+const LAMP_AT = [5.2, -42.6];
 // the paved apron in front of the café, from its wall to the railing and the bridge (user photo, corner view)
-const APRON = [[2.96, -38.98], [4.51, -43.74], [5.11, -43.78], [7.16, -42.6], [11.0, -41.9], [9.6, -36.8]];
+const APRON = [[2.96, -38.98], [4.51, -43.74], [5.11, -43.78], [6.3, -43.2], [6.0, -38.0]];
 
 const edgesOf = (ring) => ring.map((a, i) => [a, ring[(i + 1) % ring.length]]);
 const faceOf = (a, b, water) => {

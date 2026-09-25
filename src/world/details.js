@@ -7,7 +7,7 @@
 import * as THREE from 'three';
 import details from '../../data/details.json';
 import { facadeFacing, onFacade, streetFacade } from './landmarks/common.js';
-import { balcony, bench, hangingSigns, lampPost, planter, wallLamp } from './props.js';
+import { aBoard, balcony, bench, bollard, cafeSet, hangingSigns, lampPost, planter, pollardTree, postBox, trafficLightPot, wallLamp } from './props.js';
 import { shopfront } from './shops.js';
 import { carsAlongKerb, carsInLot } from './cars.js';
 import { flowerBall, GERANIUMS } from './flowers.js';
@@ -107,11 +107,24 @@ const PLACERS = {
   planter(item, data, heightAt) {
     return item.points.map(([x, z], i) => {
       const p = planter();
-      const ball = flowerBall(0.6, GERANIUMS, (i * 0.37) % 1);
-      ball.position.y = 0.72;
-      p.add(ball);
+      if (item.flowers !== false) {
+        const ball = flowerBall(0.6, GERANIUMS, (i * 0.37) % 1);
+        ball.position.y = 0.72;
+        p.add(ball);
+      }
       p.position.set(x, heightAt(x, z), z);
       return p;
+    });
+  },
+  /** Any simple prop at listed points: { type: 'prop', prop, points, facing | rot } */
+  prop(item, data, heightAt) {
+    const make = { pollardTree, cafeSet, bollard, postBox, trafficLightPot, aBoard, bench }[item.prop];
+    if (!make) return [];
+    return item.points.map(([x, z], i) => {
+      const o = make((i * 0.37) % 1);
+      o.position.set(x, heightAt(x, z), z);
+      o.rotation.y = item.facing ? Math.atan2(item.facing[0] - x, item.facing[1] - z) : (item.rot ?? 0);
+      return o;
     });
   },
   balcony(item, data, _h, building, facade) {

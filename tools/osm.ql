@@ -1,4 +1,4 @@
-[out:json][timeout:120][bbox:48.5100,5.5020,48.5155,5.5110];
+[out:json][timeout:120][bbox:48.5082,5.5010,48.5170,5.5172];
 ( way["building"]; relation["building"];
   way["highway"]; way["waterway"]; way["natural"]; relation["natural"="water"];
   way["landuse"]; way["leisure"]; way["amenity"]; way["barrier"]; way["bridge"];

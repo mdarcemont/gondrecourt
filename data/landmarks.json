@@ -143,25 +143,14 @@
       "osm": "node/6621310889",
       "bdtopo": "BATIMENT0000002245471187",
       "facts": [
-        "store front on the car park: green panel with a fruit-and-hands mural, 'Carrefour contact' lettering with the logo, arched glazed entrance, red 'au contact des bonnes affaires' banner",
-        "car park with painted bays in front; blue lamp posts"
+        "LiDAR HD: the store is in the tall pediment building (12.7 m; BD TOPO records 4.3 m)",
+        "north door on the car park: green panel with a fruit mural, lettering, arched entrance, red banner",
+        "west door on the Rue de la Grande Fontaine by the river: pediment with an oculus, 'Carrefour contact' lettering, green annex",
+        "the two doors communicate: you can walk through the store (interior invented)"
       ],
       "sources": [
-        "user Street View captures 2026-09-25 (Apr 2026)"
-      ],
-      "verified": false
-    },
-    {
-      "id": "carrefour-facade",
-      "name": "Building above Carrefour Contact",
-      "osm": "node/6621310889",
-      "bdtopo": "BATIMENT0000002245471184",
-      "facts": [
-        "tall cream building with a rounded pediment and an oculus, three storeys",
-        "river side: 'Carrefour contact' lettering and a mural; which BD TOPO building carries the pediment is read from the photos, not certain"
-      ],
-      "sources": [
-        "user Street View captures 2026-09-25 (Apr 2026)"
+        "user Street View captures 2026-09-25 (Apr 2026)",
+        "user Street View capture May 2026 from the Rue de la Grande Fontaine"
       ],
       "verified": false
     },
@@ -193,6 +182,62 @@
       ],
       "sources": [
         "user Street View captures 2026-09-25 (Apr 2026)"
+      ],
+      "verified": false
+    },
+    {
+      "id": "maison-bleue",
+      "name": "Tall house with blue shutters, 14 D32",
+      "osm": "node/0",
+      "bdtopo": "BATIMENT0000002245470824",
+      "facts": [
+        "three storeys of dressed limestone, blue louvred shutters, slate mansard roof with dormers",
+        "arched ground-floor openings with blue doors; cornice under the roof"
+      ],
+      "sources": [
+        "user Street View captures of the Place, Apr 2026"
+      ],
+      "verified": false
+    },
+    {
+      "id": "ecole",
+      "name": "École primaire publique La Petite Meusienne (maternelle)",
+      "osm": "way/1455792959",
+      "bdtopo": "BATIMENT0000002245470570",
+      "facts": [
+        "two storeys, white, continuous ribbons of windows, low hipped brown roof, tricolour over the door",
+        "red school barriers along the Rue du Panorama",
+        "BD TOPO merges the whole school into ...0570; its east wing along the Rue du Panorama is the photographed block"
+      ],
+      "sources": [
+        "user Street View captures May 2026"
+      ],
+      "verified": false
+    },
+    {
+      "id": "ecole-hall",
+      "name": "École: courtyard block",
+      "osm": "way/1455792959",
+      "bdtopo": "BATIMENT0000002245470572",
+      "facts": [
+        "white, grey metal barrel roof (drawn as a low hip), three portholes on the street end, yellow letter box"
+      ],
+      "sources": [
+        "user Street View captures May 2026"
+      ],
+      "verified": false
+    },
+    {
+      "id": "college",
+      "name": "Collège du Val d'Ornois",
+      "osm": "way/1430200239",
+      "bdtopo": "BATIMENT0000002245470305",
+      "facts": [
+        "long two-storey block, cream render, stone base, brown tile roof, tall square chimney",
+        "windows with white roller shutters half down; green mesh fence; flat grey annex by the car park"
+      ],
+      "sources": [
+        "user Street View captures May 2026"
       ],
       "verified": false
     }
