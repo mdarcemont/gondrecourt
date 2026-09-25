@@ -18,5 +18,7 @@ import * as maisonBleue from './maison-bleue.js';
 import * as ecole from './ecole.js';
 import * as ecoleHall from './ecole-hall.js';
 import * as college from './college.js';
+import * as pavillon from './pavillon.js';
+import * as lavoir from './lavoir.js';
 
-export const LANDMARKS = { 'le-central': leCentral, pharmacie, tour, mairie, monument, eglise, tribunal, carpiere, carrefour, 'credit-agricole': creditAgricole, 'mie-mado': mieMado, 'maison-bleue': maisonBleue, ecole, 'ecole-hall': ecoleHall, college };
+export const LANDMARKS = { 'le-central': leCentral, pharmacie, tour, mairie, monument, eglise, tribunal, carpiere, carrefour, 'credit-agricole': creditAgricole, 'mie-mado': mieMado, 'maison-bleue': maisonBleue, ecole, 'ecole-hall': ecoleHall, college, pavillon, lavoir };

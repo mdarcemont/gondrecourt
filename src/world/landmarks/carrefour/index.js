@@ -63,7 +63,7 @@ function northFront(g, f, y) {
   put(plane(Math.min(9, f.length * 0.38), 3.6, flat({ color: GREEN })), 0.2, y + 1.8);
   put(plane(4.2, 2.4, flat({ map: fruitMural(), cache: false })), 0.2, y + 2.0, 0.07);
   put(plane(4.4, 1.35, flat({ map: carrefourLogo(), transparent: true, alphaTest: 0.3, cache: false })), NORTH_DOOR, y + 3.35, 0.07);
-  put(new THREE.Mesh(arch(2.6, 2.9), flat({ color: PAL.frameWhite, side: THREE.DoubleSide })), NORTH_DOOR, y, 0.06);
+  put(new THREE.Mesh(new THREE.RingGeometry(1.1, 1.3, 16, 1, 0, Math.PI), flat({ color: PAL.frameWhite, side: THREE.DoubleSide })), NORTH_DOOR, y + 1.8, 0.06);
   put(signPanel('au contact des bonnes affaires', 0.5, { color: 0xffffff, bg: 0xd8333a, font: 'bold 64px Arial, sans-serif', maxWidth: 3.2 }), 0.74, y + 2.6, 0.07);
   put(plane(0.5, 0.5, flat({ color: 0x2350b8 })), 0.63, y + 2.2, 0.07);
 }
@@ -74,9 +74,17 @@ function westFront(g, f, y, eave) {
   put(plane(4.2, 1.3, flat({ map: carrefourLogo(), transparent: true, alphaTest: 0.3, cache: false })), 0.5, y + 3.4, 0.07);
   // the green annex round the second door, with its posters
   put(plane(3.6, 3.0, flat({ color: GREEN })), WEST_DOOR, y + 1.5, 0.06);
-  put(plane(DOOR_W, 2.4, flat({ color: PAL.frameWhite, side: THREE.DoubleSide })), WEST_DOOR, y + 1.2, 0.08);
-  put(plane(DOOR_W - 0.3, 2.2, flat({ color: PAL.glassDark, side: THREE.DoubleSide })), WEST_DOOR, y + 1.1, 0.1);
+
   put(plane(1.0, 1.3, flat({ map: fruitMural(), cache: false })), 0.2, y + 1.6, 0.07);
+}
+
+/** Real openings in the walls at both doors (used by buildings.js). */
+export function doors(building) {
+  const top = building.ground + 3.0;
+  return [[LOT, NORTH_DOOR], [RIVER_ROAD, WEST_DOOR]].map(([target, at]) => {
+    const f = facadeFacing(building, target);
+    return { from: f.a, at, width: DOOR_W, top };
+  });
 }
 
 export function build({ building, heightAt, addSurface, addCollider, makeWalkable }) {
@@ -94,6 +102,14 @@ export function build({ building, heightAt, addSurface, addCollider, makeWalkabl
   makeWalkable?.(building.id);
   wallColliders(building.ring, doors).forEach((w) => addCollider?.(w));
   addSurface?.(building.ring, () => y);
+  // a green SORTIE sign over each door, on the inside, so the way out reads from the aisles
+  [[north, NORTH_DOOR], [west, WEST_DOOR]].forEach(([f, at]) => {
+    const sign = signPanel('SORTIE', 0.35, { color: 0xffffff, bg: 0x2f9a4a, font: 'bold 80px Arial, sans-serif' });
+    sign.rotation.y = Math.PI;
+    const holder = new THREE.Group();
+    holder.add(sign);
+    g.add(onFacade(holder, f, { along: at, y: y + 2.75, out: -0.12 }));
+  });
   const { group, colliders } = buildInterior(building.ring, y, [north, west]);
   colliders.forEach((c) => addCollider?.(c));
   g.add(group);

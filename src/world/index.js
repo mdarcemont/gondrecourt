@@ -71,7 +71,10 @@ export function buildWorld(scene, { sky } = {}, data = worldData) {
   const parts = landmarkParts(data);
   const annexIds = new Set(parts.flatMap((l) => l.annexes ?? []));
   const replaced = new Set([...parts.filter((l) => l.replace).map((l) => l.buildingId), ...annexIds]);
-  const landmarkStyles = Object.fromEntries(parts.filter((l) => l.buildingId).map((l) => [l.buildingId, l.def.style ?? {}]));
+  const landmarkStyles = Object.fromEntries(parts.filter((l) => l.buildingId).map((l) => [
+    l.buildingId,
+    { ...(l.def.style ?? {}), doors: l.def.doors?.(l.building) ?? [] },
+  ]));
   const overrides = { ...upperTownOverrides(data.buildings, landmarkStyles), ...landmarkStyles };
   const generic = data.buildings.filter((b) => !replaced.has(b.id));
 
@@ -106,7 +109,11 @@ export function buildWorld(scene, { sky } = {}, data = worldData) {
 
   /** Resolve a proposed position [x, z] for a walker of radius r. */
   const collide = (p, r) => {
-    const out = nearBuildings(p[0], p[1]).reduce((q, ring) => pushOut(q, ring, r, pointInPolygon(q, ring)), p);
+    const near = nearBuildings(p[0], p[1]);
+    const out = near.reduce((q, ring) => (pointInPolygon(q, ring) ? q : pushOut(q, ring, r, false)), p);
+    // terraced houses share walls: a push out of one can land in the next, so any
+    // move that ends inside a building is refused instead of resolved
+    if (near.some((ring) => pointInPolygon(out, ring))) return null;
     const wet = water.some((ring) => pointInPolygon(out, ring));
     const onDeck = bridges.some((b) => deckHeightAt(out, b) !== null) || surfaces.some((s) => pointInPolygon(out, s.ring));
     return wet && !onDeck ? null : out;

@@ -70,18 +70,34 @@ function addWalls(buf, under, b, plan, style) {
   const floorH = (b.eave - b.ground) / floors;
   const foot = b.ground - 2;
   const v = (y) => (y - b.ground) / floorH;
+  const doors = style.doors ?? [];
   plan.outline.forEach((a, i) => {
     const c = plan.outline[(i + 1) % plan.outline.length];
     const edge = Math.hypot(c[0] - a[0], c[1] - a[1]);
     if (edge < 0.05) return;
-    const ya = plan.heightAt(a);
-    const yc = plan.heightAt(c);
     const bays = Math.max(1, Math.round(edge / BAY));
-    buf.quad(
-      [a[0], b.ground, a[1]], [c[0], b.ground, c[1]], [c[0], yc, c[1]], [a[0], ya, a[1]],
-      [[0, 0], [bays, 0], [bays, v(yc)], [0, v(ya)]],
-      style.wall
-    );
+    const at = (t) => [a[0] + (c[0] - a[0]) * t, a[1] + (c[1] - a[1]) * t];
+    // wall piece between fractions t0..t1 of the edge, from yLow up to the roof line
+    const piece = (t0, t1, yLow) => {
+      const p0 = at(t0);
+      const p1 = at(t1);
+      const y0 = plan.heightAt(p0);
+      const y1 = plan.heightAt(p1);
+      buf.quad([p0[0], yLow, p0[1]], [p1[0], yLow, p1[1]], [p1[0], y1, p1[1]], [p0[0], y0, p0[1]],
+        [[bays * t0, v(yLow)], [bays * t1, v(yLow)], [bays * t1, v(y1)], [bays * t0, v(y0)]], style.wall);
+    };
+    // doors are matched by their edge's first corner, so they survive the ridge split of the outline
+    const gaps = doors
+      .filter((d) => Math.abs(d.from[0] - a[0]) < 1e-6 && Math.abs(d.from[1] - a[1]) < 1e-6)
+      .map((d) => ({ t0: d.at - d.width / 2 / edge, t1: d.at + d.width / 2 / edge, top: d.top }))
+      .sort((p, q) => p.t0 - q.t0);
+    let t = 0;
+    gaps.forEach((g) => {
+      piece(t, g.t0, b.ground);
+      piece(g.t0, g.t1, g.top);
+      t = g.t1;
+    });
+    piece(t, 1, b.ground);
     under.quad(
       [a[0], foot, a[1]], [c[0], foot, c[1]], [c[0], b.ground, c[1]], [a[0], b.ground, a[1]],
       [[0, 0], [1, 0], [1, 1], [0, 1]],

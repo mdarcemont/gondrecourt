@@ -16,8 +16,8 @@ const scratch = new Vector3();
 const BELL_PARTIALS = [[0.5, 0.6], [1, 1], [1.183, 0.55], [1.506, 0.35], [2, 0.45], [2.514, 0.2], [2.662, 0.15], [3.011, 0.1]];
 const BELL_NOTE = 196; // G3
 const STRIKE_GAP = 2.4; // seconds between strokes
-const RIVER_REACH = 35; // metres at which the river fades out
-const RIVER_LEVEL = 0.035; // a trickle you notice only near the water
+const RIVER_REACH = 22; // metres at which the river fades out
+const RIVER_LEVEL = 0.01; // a trickle you notice only near the water
 
 function noiseBuffer(ctx) {
   const buf = ctx.createBuffer(1, ctx.sampleRate * 3, ctx.sampleRate);

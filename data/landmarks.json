@@ -240,6 +240,36 @@
         "user Street View captures May 2026"
       ],
       "verified": false
+    },
+    {
+      "id": "pavillon",
+      "name": "Pavilion at the end of the path, La Carpière",
+      "osm": "node/0",
+      "bdtopo": "BATIMENT0000002245470526",
+      "replace": true,
+      "facts": [
+        "open: tiled pyramid roof (old, mossy) on four stone pillars, no walls",
+        "BD TOPO marks it a light structure; top 6.3 m"
+      ],
+      "sources": [
+        "user Street View captures Oct 2023 (26 D966)"
+      ],
+      "verified": false
+    },
+    {
+      "id": "lavoir",
+      "name": "Lavoir on the Ornain",
+      "osm": "way/454574356",
+      "bdtopo": "BATIMENT0000002245470539",
+      "replace": true,
+      "facts": [
+        "open: big hipped roof of old tiles on stone pillars, low wall on the land sides",
+        "washing basin inside, on the river bank"
+      ],
+      "sources": [
+        "user Street View captures Oct 2023 (26 D966)"
+      ],
+      "verified": false
     }
   ]
 }
